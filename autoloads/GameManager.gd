@@ -25,18 +25,18 @@ func _ready():
 
 func finish_game(points):
 	add_points = points
-	SceneManager.change_scene('res://UI/podium.tscn')
+	SceneManager.change_scene('res://UI/podium.tscn', {'pattern_enter': 'scribbles', 'pattern_leave': 'circle'})
 	
 func load_new_game():
 	current_game_index += 1
 	if current_game_index == 5:
-		SceneManager.change_scene("res://UI/endscreen.tscn")
+		SceneManager.change_scene("res://UI/endscreen.tscn", {'pattern_enter': 'curtains'})
 		return
 		
 	var selected_conf = game_configs[current_game_index % len(game_configs)]
 	
 	current_config = load("res://minigames/configs/%s" % selected_conf)
-	SceneManager.change_scene("res://UI/Debuff.tscn")
+	SceneManager.change_scene("res://UI/Debuff.tscn", {'pattern_enter': 'curtains', 'pattern_leave': 'circle'})
 
 func load_with_debuff():
 	SceneManager.change_scene(current_config.scene)

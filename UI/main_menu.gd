@@ -3,7 +3,7 @@ extends Control
 
 func _on_Play_button_up():
 	$ButtonClick.play()
-	SceneManager.change_scene("res://UI/intro.tscn")
+	SceneManager.change_scene("res://UI/intro.tscn", {'pattern_leave': 'circle'})
 
 func _ready():
 	$Background/Play.grab_focus()
