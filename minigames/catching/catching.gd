@@ -39,3 +39,7 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 	area.queue_free()
 	points -= 1
 	$CanvasLayer/Points.text = str(points)
+
+
+func _on_Timer2_timeout() -> void:
+	GameManager.load_new_game()

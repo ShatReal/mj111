@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://minigames/configs/minigame.gd" type="Script" id=1]
+[ext_resource path="res://minigames/catching/catching.tscn" type="PackedScene" id=2]
 
 [resource]
 script = ExtResource( 1 )
 title = "Catching"
 debuff = "More chaotic falling"
 rules = "Race around to catch the objects falling from the sky!"
+scene = ExtResource( 2 )
