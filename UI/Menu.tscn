@@ -82,4 +82,5 @@ margin_bottom = 196.0
 custom_fonts/font = SubResource( 6 )
 text = "ABOUT"
 
+>>>>>>> f3a8791b21989169e52dd00f3299e8fcba622fbc
 [connection signal="button_up" from="Background/MarginContainer/VBoxContainer/Play" to="." method="_on_Play_button_up"]
