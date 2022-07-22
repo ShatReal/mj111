@@ -6,3 +6,4 @@
 script = ExtResource( 1 )
 title = "Catching"
 debuff = "More chaotic falling"
+rules = "Race around to catch the objects falling from the sky!"

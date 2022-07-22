@@ -4,13 +4,14 @@ var game_configs = []
 var current_config : MiniGame
 
 func _ready():
+	randomize()
 	var directory = Directory.new()
 	var error = directory.open("res://minigames/configs/")
 	if error == OK:
 		directory.list_dir_begin()
 		var file_name = directory.get_next()
 		while (file_name != ""):
-			if !directory.current_is_dir():
+			if !directory.current_is_dir() and file_name.ends_with(".tres"):
 				game_configs.push_front(file_name)
 			file_name = directory.get_next()
 	else:
@@ -26,4 +27,4 @@ func load_with_debuff():
 	get_tree().current_scene.debuff()
 
 func load_normal():
-	SceneManager.change_scene(current_config.scene)	
+	SceneManager.change_scene(current_config.scene)
