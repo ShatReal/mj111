@@ -9,3 +9,4 @@ title = "Sorting"
 debuff = "Faster conveyer"
 rules = "Press left or right to sort the gifts into the correct side!"
 scene = ExtResource( 2 )
+song = "sorting"

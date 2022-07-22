@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Catch.ogg-6331ae03d2980177acf3b1dd50c92b63.oggstr"
+
+[deps]
+
+source_file="res://music/Catch.ogg"
+dest_files=[ "res://.import/Catch.ogg-6331ae03d2980177acf3b1dd50c92b63.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
