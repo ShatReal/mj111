@@ -1,7 +1,7 @@
 extends Control
 
 onready var debuff_button : Button = get_node("ColorRect/MarginContainer/VSplitContainer/HSplitContainer/MarginContainer/Debuff")
-onready var no_debuff_button : Button = get_node("ColorRect/MarginContainer/VSplitContainer/HSplitContainer/MarginContainer/NoDebuff")
+onready var no_debuff_button : Button = get_node("ColorRect/MarginContainer/VSplitContainer/HSplitContainer/MarginContainer2/NoDebuff")
 onready var title : RichTextLabel = get_node("ColorRect/MarginContainer/VSplitContainer/Title")
 
 func _ready():

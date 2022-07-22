@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "MiniGame",
 "language": "GDScript",
-"path": "res://minigame.gd"
+"path": "res://minigames/configs/minigame.gd"
 }, {
 "base": "Resource",
 "class": "RandUtils",
@@ -39,7 +39,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
-GameManager="*res://GameManager.gd"
+GameManager="*res://autoloads/GameManager.gd"
 
 [debug]
 
@@ -91,4 +91,5 @@ move_down={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

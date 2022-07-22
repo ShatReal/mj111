@@ -6,6 +6,7 @@ const FO_START_X_RANGE = Vector2(32, 1280-32)
 
 export var FallingObject: PackedScene
 export var max_obj_dist := 600.0 # Increase this variable for more difficulty!
+export var max_obj_dist_debuff := 1280.0
 
 var previous_x := 1280.0/2.0
 var points := 0
@@ -13,6 +14,10 @@ var points := 0
 
 func _ready() -> void:
 	randomize()
+	
+
+func debuff() -> void:
+	max_obj_dist = max_obj_dist_debuff
 
 
 func _on_Timer_timeout() -> void:
