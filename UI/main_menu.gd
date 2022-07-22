@@ -6,3 +6,4 @@ func _on_Play_button_up():
 
 func _ready():
 	$Background/Play.grab_focus()
+	MusicManager.play("title")

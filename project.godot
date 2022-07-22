@@ -40,6 +40,7 @@ config/icon="res://icon.png"
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 GameManager="*res://autoloads/GameManager.gd"
+MusicManager="*res://autoloads/MusicManager.tscn"
 
 [debug]
 

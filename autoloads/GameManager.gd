@@ -31,6 +31,8 @@ func load_with_debuff():
 	SceneManager.change_scene(current_config.scene)
 	yield(SceneManager, "scene_loaded")
 	get_tree().current_scene.debuff()
+	MusicManager.play(current_config.song)
 
 func load_normal():
 	SceneManager.change_scene(current_config.scene)
+	MusicManager.play(current_config.song)

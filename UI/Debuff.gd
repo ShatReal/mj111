@@ -8,6 +8,7 @@ func _ready():
 	debuff.text = "Debuff: %s" % GameManager.current_config.debuff
 	title.bbcode_text = "[center]%s[/center]" % GameManager.current_config.title
 	rules.text = GameManager.current_config.rules
+	MusicManager.play("debuff")
 
 func _on_Debuff_button_up():
 	GameManager.load_with_debuff()
