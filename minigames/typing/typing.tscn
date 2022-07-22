@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://fonts/L_10646.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://minigames/typing/typing.gd" type="Script" id=2]
+[ext_resource path="res://clock.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -54,8 +55,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 200 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="clock" parent="CenterContainer" instance=ExtResource( 3 )]
+
+[connection signal="timeout" from="CenterContainer/clock" to="." method="_on_clock_timeout"]
