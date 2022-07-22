@@ -29,6 +29,10 @@ func finish_game(points):
 	
 func load_new_game():
 	current_game_index += 1
+	if current_game_index == 5:
+		SceneManager.change_scene("res://UI/endscreen.tscn")
+		return
+		
 	var selected_conf = game_configs[current_game_index % len(game_configs)]
 	
 	current_config = load("res://minigames/configs/%s" % selected_conf)
@@ -43,3 +47,10 @@ func load_with_debuff():
 func load_normal():
 	SceneManager.change_scene(current_config.scene)
 	MusicManager.play(current_config.song)
+
+func restart():
+	SceneManager.change_scene("res://UI/Menu.tscn")
+	current_points = 0
+	current_game_index = -1
+	randomize()
+	game_configs.shuffle()

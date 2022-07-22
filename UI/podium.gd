@@ -18,6 +18,5 @@ func _on_Timer_timeout():
 func set_points():
 	score_label.bbcode_text = "[center]%s[/center]" % GameManager.current_points
 
-
 func _on_EndTimer_timeout():
 	GameManager.load_new_game()
