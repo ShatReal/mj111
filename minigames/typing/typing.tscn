@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/L_10646.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://minigames/typing/typing.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="typing" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.0313726, 0.00392157, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="word" type="RichTextLabel" parent="ColorRect/CenterContainer"]
+margin_left = 128.0
+margin_top = 310.0
+margin_right = 1152.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 1024, 100 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]WORD[/center]"
+text = "WORD"
+scroll_active = false
+
+[node name="typed" type="RichTextLabel" parent="ColorRect/CenterContainer"]
+margin_left = 128.0
+margin_top = 310.0
+margin_right = 1152.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 1024, 100 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.2, 0.988235, 0.0901961, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]WORD[/center]"
+visible_characters = 0
+percent_visible = 0.0
+text = "WORD"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
