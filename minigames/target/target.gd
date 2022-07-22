@@ -28,4 +28,4 @@ func on_point(add: bool) -> void:
 
 
 func _on_Timer2_timeout() -> void:
-	GameManager.load_new_game()
+	GameManager.finish_game(points)

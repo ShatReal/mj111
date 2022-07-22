@@ -12,7 +12,7 @@ func _integrate_forces(state):
 
 
 
-func _on_sled_body_entered(body):
+func _on_sled_body_entered(_body):
 	if linear_velocity.y < 10:
 		print("lost")
 	else:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sack.png-7161ac8a81f0e3795c10c43fdda78859.stex"
+path="res://.import/redgift2.png-94d5e6d2d041ec019fbefdfd407f2a17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/MiniGameJam - Colors/Catching Gifts/sack.png"
-dest_files=[ "res://.import/sack.png-7161ac8a81f0e3795c10c43fdda78859.stex" ]
+source_file="res://minigames/sorting/redgift2.png"
+dest_files=[ "res://.import/redgift2.png-94d5e6d2d041ec019fbefdfd407f2a17.stex" ]
 
 [params]
 

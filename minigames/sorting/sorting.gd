@@ -41,4 +41,4 @@ func on_item_point(item: Sprite, add: bool) -> void:
 
 
 func _on_Timer2_timeout() -> void:
-	GameManager.load_new_game()
+	GameManager.finish_game(points)

@@ -1,11 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://minigames/sorting/sorting.gd" type="Script" id=1]
 [ext_resource path="res://minigames/sorting/sorting_item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://minigames/sorting/belt1.png" type="Texture" id=3]
+[ext_resource path="res://minigames/sorting/belt2.png" type="Texture" id=4]
+[ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 5 )
 
 [node name="Sorting" type="Node2D"]
 script = ExtResource( 1 )
 SortingItem = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 720.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 640.0
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 1, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 640, 360 )
+rotation = 1.5708
+frames = SubResource( 1 )
+playing = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -15,20 +47,23 @@ autostart = true
 [node name="Red" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
 text = "Red "
 
 [node name="Green" type="Label" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -40.0
-margin_bottom = 14.0
-text = "Green"
+margin_left = -245.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 2 )
+text = "Blue"
 
 [node name="Points" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -14.0
-margin_right = 40.0
+margin_top = -101.0
+margin_right = 59.0
+custom_fonts/font = SubResource( 2 )
 text = "0"
 
 [node name="Timer2" type="Timer" parent="."]

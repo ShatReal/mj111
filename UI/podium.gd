@@ -8,8 +8,12 @@ func _ready():
 	$ScoreTimer.start()
 
 func _on_Timer_timeout():
-	GameManager.current_points += 1
-	GameManager.add_points -= 1
+	if GameManager.add_points < 0:
+		GameManager.current_points -= 1
+		GameManager.add_points += 1
+	else:
+		GameManager.current_points += 1
+		GameManager.add_points -= 1
 	set_points()
 	if GameManager.add_points == 0:
 		$ScoreTimer.stop()

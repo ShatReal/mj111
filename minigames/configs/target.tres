@@ -9,3 +9,4 @@ title = "Target Shooting"
 debuff = "Faster targets"
 rules = "Click the targets to shoot them!"
 scene = ExtResource( 2 )
+song = "song"

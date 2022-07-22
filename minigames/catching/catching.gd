@@ -42,4 +42,4 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 
 
 func _on_Timer2_timeout() -> void:
-	GameManager.load_new_game()
+	GameManager.finish_game(points)
