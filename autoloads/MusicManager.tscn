@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://autoloads/MusicManager.gd" type="Script" id=1]
 [ext_resource path="res://music/xmas_ending.ogg" type="AudioStream" id=2]
 [ext_resource path="res://music/dice.ogg" type="AudioStream" id=3]
 [ext_resource path="res://music/transition.ogg" type="AudioStream" id=4]
+[ext_resource path="res://music/moon2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://music/Sleigh_Landing.ogg" type="AudioStream" id=6]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource( 1 )
@@ -18,3 +20,10 @@ volume_db = -2.364
 
 [node name="debuff" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="typing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -4.727
+
+[node name="sled" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

@@ -9,3 +9,4 @@ title = "Typing Challange"
 debuff = "Longer words"
 rules = "Type the words as they show up, longer words get more points"
 scene = ExtResource( 2 )
+song = "typing"
