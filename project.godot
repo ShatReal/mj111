@@ -8,10 +8,42 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "MiniGame",
+"language": "GDScript",
+"path": "res://minigame.gd"
+}, {
+"base": "Resource",
+"class": "RandUtils",
+"language": "GDScript",
+"path": "res://addons/rand_utils/RandUtils.gd"
+}, {
+"base": "Object",
+"class": "SceneManagerConstants",
+"language": "GDScript",
+"path": "res://addons/scene_manager/SceneManagerConstants.gd"
+} ]
+_global_script_class_icons={
+"MiniGame": "",
+"RandUtils": "",
+"SceneManagerConstants": ""
+}
+
 [application]
 
 config/name="MJ111"
+run/main_scene="res://UI/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+GameManager="*res://GameManager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/rand_utils/plugin.cfg", "res://addons/scene_manager/plugin.cfg" )
 
 [rendering]
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://minigame.gd" type="Script" id=1]
+[ext_resource path="res://minigames/whackamole.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+title = "Whack A Mole"
+debuff = "Speed up the moles"
+scene = ExtResource( 2 )
