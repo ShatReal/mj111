@@ -4,6 +4,7 @@ var words = ["Christmas","Merry","Festive","Santa Claus","Saint Nicholas","Kris 
 var MAX_WORD_LENGTH = 5
 var current_word = ""
 var current_letter = 0
+var points = 0
 
 onready var word = $ColorRect/CenterContainer/word
 onready var typed = $ColorRect/CenterContainer/typed
@@ -29,10 +30,14 @@ func next_word():
 	typed.visible_characters = 0
 
 func _unhandled_key_input(event):
-	print(OS.get_scancode_string(event.scancode), current_word[current_letter])
 	if OS.get_scancode_string(event.scancode) == current_word[current_letter]:
 		current_letter += 1
 		if current_letter == len(current_word):
+			points += len(current_word)
 			next_word()
 		else:
 			typed.visible_characters = current_letter
+
+
+func _on_Timer_timeout():
+	GameManager.finish_game(points)

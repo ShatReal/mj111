@@ -11,9 +11,6 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -45,8 +42,8 @@ margin_top = 310.0
 margin_right = 1152.0
 margin_bottom = 410.0
 rect_min_size = Vector2( 1024, 100 )
-custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.2, 0.988235, 0.0901961, 1 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]WORD[/center]"
 visible_characters = 0
@@ -56,3 +53,9 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

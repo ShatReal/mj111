@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sleigh_Landing.ogg-c6e0114ef083da41b0d5fc586fd3ec7e.oggstr"
+
+[deps]
+
+source_file="res://music/Sleigh_Landing.ogg"
+dest_files=[ "res://.import/Sleigh_Landing.ogg-c6e0114ef083da41b0d5fc586fd3ec7e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

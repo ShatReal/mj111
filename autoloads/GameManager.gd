@@ -4,6 +4,9 @@ var game_configs = []
 var current_config : MiniGame
 var current_game_index = -1
 
+var current_points := 0
+var add_points := 0
+
 func _ready():
 	randomize()
 	var directory = Directory.new()
@@ -20,6 +23,10 @@ func _ready():
 	randomize()
 	game_configs.shuffle()
 
+func finish_game(points):
+	add_points = points
+	SceneManager.change_scene('res://UI/podium.tscn')
+	
 func load_new_game():
 	current_game_index += 1
 	var selected_conf = game_configs[current_game_index % len(game_configs)]
