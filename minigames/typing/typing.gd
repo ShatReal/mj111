@@ -38,6 +38,5 @@ func _unhandled_key_input(event):
 		else:
 			typed.visible_characters = current_letter
 
-
-func _on_Timer_timeout():
+func _on_clock_timeout():
 	GameManager.finish_game(points)

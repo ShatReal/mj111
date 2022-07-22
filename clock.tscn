@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://clock.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="clock" type="TextureProgress"]
+margin_left = 608.0
+margin_top = 68.0
+margin_right = 672.0
+margin_bottom = 132.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+fill_mode = 4
+tint_progress = Color( 0.337255, 0.192157, 0.192157, 1 )
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="time" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -20.0
+margin_right = 32.0
+margin_bottom = 26.0
+custom_colors/default_color = Color( 0.901961, 1, 0.0862745, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]10"
+text = "10"
+scroll_active = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
