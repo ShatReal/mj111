@@ -1,6 +1,7 @@
 extends Node
 
 var game_configs = []
+var used_configs = []
 var current_config : MiniGame
 
 func _ready():
@@ -17,7 +18,14 @@ func _ready():
 		print("Error opening directory")
 
 func load_new_game():
-	current_config = load("res://minigames/configs/%s" % RandUtils.from_array(game_configs))
+	if len(game_configs) == 0:
+		game_configs = used_configs
+		
+	var selected_conf = RandUtils.from_array(game_configs)[0]
+	game_configs.remove(selected_conf)
+	used_configs.push_front(selected_conf)
+	
+	current_config = load("res://minigames/configs/%s" % selected_conf)
 	SceneManager.change_scene("res://UI/Debuff.tscn")
 
 func load_with_debuff():
