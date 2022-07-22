@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://fonts/L_10646.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://images/MiniGameJam - Colors/Title screen/aboutbutton.png" type="Texture" id=2]
 [ext_resource path="res://images/MiniGameJam - Colors/Title screen/titlelayer1.png" type="Texture" id=3]
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://images/MiniGameJam - Colors/Title screen/playbutton.png" type="Texture" id=5]
@@ -84,9 +84,60 @@ tracks/1/keys = {
 "values": [ Vector2( 0.356126, 0.356126 ), Vector2( 0.395924, 0.395924 ) ]
 }
 
-[sub_resource type="DynamicFont" id=6]
-size = 20
-font_data = ExtResource( 2 )
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.356126, 0.356126 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 319.333, 342.014 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 13.9288 ),
+"update": 0,
+"values": [ Vector2( 0.356126, 0.356126 ), Vector2( 0.397, 0.397 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 13.9288 ),
+"update": 0,
+"values": [ Vector2( 319.333, 342.014 ), Vector2( 301.373, 324.055 ) ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -127,6 +178,7 @@ margin_top = 148.951
 margin_right = 1703.62
 margin_bottom = 1198.95
 rect_scale = Vector2( 0.356126, 0.356126 )
+focus_neighbour_bottom = NodePath("../About")
 theme = SubResource( 4 )
 texture_normal = ExtResource( 5 )
 expand = true
@@ -136,16 +188,28 @@ script = ExtResource( 6 )
 anims/RESET = SubResource( 7 )
 anims/hover = SubResource( 8 )
 
-[node name="About" type="Button" parent="Background"]
-margin_left = 864.522
-margin_top = 635.678
-margin_right = 1064.52
-margin_bottom = 672.678
-custom_fonts/font = SubResource( 6 )
-text = "ABOUT"
+[node name="About" type="TextureButton" parent="Background"]
+margin_left = 319.333
+margin_top = 342.014
+margin_right = 1789.33
+margin_bottom = 942.014
+rect_scale = Vector2( 0.356126, 0.356126 )
+focus_neighbour_top = NodePath("../Play")
+theme = SubResource( 4 )
+texture_normal = ExtResource( 2 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/About"]
+anims/RESET = SubResource( 9 )
+anims/hover = SubResource( 10 )
 
 [connection signal="button_up" from="Background/Play" to="." method="_on_Play_button_up"]
 [connection signal="focus_entered" from="Background/Play" to="Background/Play" method="_on_Play_focus_entered"]
 [connection signal="focus_exited" from="Background/Play" to="Background/Play" method="_on_Play_focus_exited"]
 [connection signal="mouse_entered" from="Background/Play" to="Background/Play" method="_on_Play_mouse_entered"]
 [connection signal="mouse_exited" from="Background/Play" to="Background/Play" method="_on_Play_mouse_exited"]
+[connection signal="focus_entered" from="Background/About" to="Background/About" method="_on_About_focus_entered"]
+[connection signal="focus_exited" from="Background/About" to="Background/About" method="_on_About_focus_exited"]
+[connection signal="mouse_entered" from="Background/About" to="Background/About" method="_on_About_mouse_entered"]
+[connection signal="mouse_exited" from="Background/About" to="Background/About" method="_on_About_mouse_exited"]

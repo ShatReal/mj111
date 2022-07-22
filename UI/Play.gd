@@ -13,3 +13,15 @@ func _on_Play_mouse_exited():
 
 func _on_Play_focus_exited():
 	$AnimationPlayer.play_backwards("hover")
+
+func _on_About_focus_entered():
+	$AnimationPlayer.play("hover")
+
+func _on_About_mouse_entered():
+	$AnimationPlayer.play("hover")
+
+func _on_About_mouse_exited():
+	$AnimationPlayer.play_backwards("hover")
+
+func _on_About_focus_exited():
+	$AnimationPlayer.play_backwards("hover")
