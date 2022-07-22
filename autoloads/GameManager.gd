@@ -6,6 +6,7 @@ var current_game_index = -1
 
 var current_points := 0
 var add_points := 0
+var debuff := false
 
 func _ready():
 	randomize()
@@ -39,12 +40,14 @@ func load_new_game():
 	SceneManager.change_scene("res://UI/Debuff.tscn", {'pattern_enter': 'curtains', 'pattern_leave': 'circle'})
 
 func load_with_debuff():
+	debuff = true
 	SceneManager.change_scene(current_config.scene)
 	yield(SceneManager, "scene_loaded")
 	get_tree().current_scene.debuff()
 	MusicManager.play(current_config.song)
 
 func load_normal():
+	debuff = false
 	SceneManager.change_scene(current_config.scene)
 	MusicManager.play(current_config.song)
 

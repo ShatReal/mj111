@@ -217,3 +217,4 @@ stream = ExtResource( 7 )
 [connection signal="focus_exited" from="Background/About" to="Background/About" method="_on_About_focus_exited"]
 [connection signal="mouse_entered" from="Background/About" to="Background/About" method="_on_About_mouse_entered"]
 [connection signal="mouse_exited" from="Background/About" to="Background/About" method="_on_About_mouse_exited"]
+[connection signal="pressed" from="Background/About" to="." method="_on_About_pressed"]

@@ -15,15 +15,21 @@ func _on_Timer_timeout() -> void:
 	var t := TargetSprite.instance()
 	add_child(t)
 	if debuffed:
-		t.speed = 400.0
+		t.speed = 300.0
 	t.connect("point", self, "on_point")
 	
 	
 func on_point(add: bool) -> void:
 	if add:
-		points += 1
+		if GameManager.debuff:
+			points += 2
+		else:
+			points += 1
 	else:
-		points -= 1
+		if GameManager.debuff:
+			points -= 2
+		else:
+			points -= 1
 	$Points.text = str(points)
 
 

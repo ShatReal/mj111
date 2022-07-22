@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/Ending screens/gameover.png" type="Texture" id=2]
 [ext_resource path="res://UI/endscreen.gd" type="Script" id=3]
+[ext_resource path="res://images/MiniGameJam - Colors/Ending screens/win.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -86,11 +87,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 0
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer"]
+[node name="Lose" type="TextureRect" parent="CenterContainer/MarginContainer"]
+visible = false
 margin_right = 750.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 750, 600 )
 texture = ExtResource( 2 )
+expand = true
+
+[node name="Win" type="TextureRect" parent="CenterContainer/MarginContainer"]
+margin_right = 750.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 750, 600 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="Button" type="Button" parent="."]
@@ -102,6 +111,7 @@ margin_bottom = 359.0
 rect_rotation = 29.6942
 custom_fonts/font = SubResource( 1 )
 text = "Try Again?"
+flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/New Anim" = SubResource( 2 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://autoloads/MusicManager.gd" type="Script" id=1]
 [ext_resource path="res://music/xmas_ending.ogg" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://music/Catch.ogg" type="AudioStream" id=7]
 [ext_resource path="res://music/sorting.ogg" type="AudioStream" id=8]
 [ext_resource path="res://music/xmas_title.ogg" type="AudioStream" id=9]
+[ext_resource path="res://music/victory.ogg" type="AudioStream" id=10]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource( 1 )
@@ -42,3 +43,6 @@ volume_db = -7.091
 [node name="gameover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -11.818
+
+[node name="victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )

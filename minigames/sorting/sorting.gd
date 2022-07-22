@@ -34,9 +34,15 @@ func on_item_point(item: Sprite, add: bool) -> void:
 	if not items.size() == 0 and items[0] == item:
 		items.pop_front()
 	if add:
-		points += 1
+		if GameManager.debuff:
+			points += 2
+		else:
+			points += 1
 	else:
-		points -= 1
+		if GameManager.debuff:
+			points -= 2
+		else:
+			points -= 1
 	$CanvasLayer/Points.text = str(points)
 
 
