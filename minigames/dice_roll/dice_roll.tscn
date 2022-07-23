@@ -1,55 +1,104 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://minigames/dice_roll/dice_roll.gd" type="Script" id=2]
+[ext_resource path="res://images/MiniGameJam - Colors/color backgrounds/bggreen.png" type="Texture" id=3]
+[ext_resource path="res://minigames/dice_roll/die.glb" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 1 )
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 5.87636, 0.0441699, 6.02426 )
+
+[sub_resource type="BoxShape" id=3]
 
 [node name="DiceRoll" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -415.0
-margin_top = -103.0
-margin_right = 415.0
-margin_bottom = 103.0
-alignment = 1
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2565.0
+margin_bottom = 1838.0
+mouse_filter = 2
+texture = ExtResource( 3 )
 
-[node name="Title" type="Label" parent="VBoxContainer"]
-margin_right = 830.0
-margin_bottom = 101.0
-custom_fonts/font = SubResource( 1 )
-text = "Number Rolled:"
-
-[node name="Num" type="Label" parent="VBoxContainer"]
-margin_top = 105.0
-margin_right = 830.0
-margin_bottom = 206.0
-custom_fonts/font = SubResource( 1 )
-text = "0"
-align = 1
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
-autostart = true
+[node name="endtimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
-autostart = true
 
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 5.09276, 5.94119, 5.57363 )
+
+[node name="StaticBody" type="StaticBody" parent="ViewportContainer/Viewport"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12393, 0 )
+shape = SubResource( 4 )
+
+[node name="die" type="RigidBody" parent="ViewportContainer/Viewport"]
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="ViewportContainer/Viewport/die"]
+shape = SubResource( 3 )
+
+[node name="raycasts" type="Spatial" parent="ViewportContainer/Viewport/die"]
+
+[node name="RayCast" type="RayCast" parent="ViewportContainer/Viewport/die/raycasts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15732, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -0.5, 0 )
+
+[node name="RayCast2" type="RayCast" parent="ViewportContainer/Viewport/die/raycasts"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.11993, -0.0344204, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -0.5, 0 )
+
+[node name="RayCast3" type="RayCast" parent="ViewportContainer/Viewport/die/raycasts"]
+transform = Transform( 1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.119709, -0.0344204, 1.14312 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -0.5, 0 )
+
+[node name="RayCast4" type="RayCast" parent="ViewportContainer/Viewport/die/raycasts"]
+transform = Transform( 4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, -1.14153, -0.0344204, -0.00257206 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -0.5, 0 )
+
+[node name="RayCast5" type="RayCast" parent="ViewportContainer/Viewport/die/raycasts"]
+transform = Transform( -5.73206e-15, 1.31134e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, 1.31134e-07, -0.101627, -0.0344204, -1.23932 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -0.5, 0 )
+
+[node name="RayCast6" type="RayCast" parent="ViewportContainer/Viewport/die/raycasts"]
+transform = Transform( -5.73206e-15, 1.31134e-07, 1, 8.74228e-08, -1, 1.31134e-07, 1, 8.74228e-08, -5.73206e-15, -0.101627, -1.3405, -0.0171852 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -0.5, 0 )
+
+[node name="die" parent="ViewportContainer/Viewport/die" instance=ExtResource( 4 )]
+
+[connection signal="timeout" from="endtimer" to="." method="_on_endtimer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

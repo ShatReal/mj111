@@ -3,11 +3,11 @@
 [ext_resource path="res://UI/minigame.gd" type="Script" id=1]
 [ext_resource path="res://minigames/sled_landing/sled_game.tscn" type="PackedScene" id=2]
 
-
 [resource]
 script = ExtResource( 1 )
 title = "Land the Sled"
 debuff = "Stronger gravity"
-rules = "Rules"
+rules = "Press space to slow your fall as you try to carefully land the sled without crashing"
 scene = ExtResource( 2 )
 song = "sled"
+timer = 0
