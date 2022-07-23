@@ -1,5 +1,5 @@
 {
-	"color": "#ffffffff",
+	"color": "#ff8e2400",
 	"description": "",
 	"display_name": "",
 	"display_name_bool": false,
@@ -14,6 +14,10 @@
 		{
 			"name": "Default",
 			"path": "res://images/MiniGameJam - Colors/misc sprites/krampus.png"
+		},
+		{
+			"name": "laugh",
+			"path": "res://images/MiniGameJam - Colors/misc sprites/wandalaughing.png"
 		}
 	],
 	"scale": 50,
