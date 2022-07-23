@@ -2,6 +2,7 @@ extends Node2D
 
 
 export var TargetSprite: PackedScene
+onready var snowball_scene = load("res://minigames/target/snowball.tscn")
 
 var points := 0
 var debuffed := false
@@ -13,12 +14,15 @@ func debuff() -> void:
 
 func _on_Timer_timeout() -> void:
 	var t := TargetSprite.instance()
-	add_child(t)
 	if debuffed:
-		t.speed = 300.0
+		t.speed = 15000.0
 	t.connect("point", self, "on_point")
-	
-	
+	$targets.add_child(t)
+
+func hit():
+	for target in $targets.get_children():
+		target.decide_hit()
+
 func on_point(add: bool) -> void:
 	if add:
 		if GameManager.debuff:
@@ -30,3 +34,10 @@ func on_point(add: bool) -> void:
 			GameManager.earn_points(-2)
 		else:
 			GameManager.earn_points(-1)
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.is_pressed():
+		var snowball = snowball_scene.instance()
+		snowball.position = event.position
+		snowball.get_node("Sprite/AnimationPlayer").play("throw")
+		$snowballs.add_child(snowball)

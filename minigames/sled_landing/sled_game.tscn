@@ -48,6 +48,10 @@ texture = ExtResource( 4 )
 position = Vector2( 0, 1.41425 )
 polygon = PoolVector2Array( 4.90457, 182.793, 128.739, -69.3314, 118.94, -104.967, 84.1945, -124.567, 35.1951, -114.767, -9.34982, -88.0403, -105.567, 137.357, -61.9129, 172.993 )
 
+[node name="finished_timer" type="Timer" parent="sled"]
+wait_time = 0.5
+one_shot = true
+
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 936.988, 1182.28 )
@@ -61,3 +65,4 @@ texture = ExtResource( 1 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="sled" to="sled" method="_on_sled_body_entered"]
+[connection signal="timeout" from="sled/finished_timer" to="sled" method="_on_finished_timer_timeout"]

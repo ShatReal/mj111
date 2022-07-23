@@ -1,34 +1,50 @@
-extends TextureButton
+extends KinematicBody2D
 
 
 signal point(add)
 
 var wander_target
-var speed := 200.0
+var speed := 10000.0
 
 const screen_width = 1920
 const screen_height = 1080
+const rect_size = Vector2(350, 550) / 2
+onready var crying = load("res://images/MiniGameJam - Colors/Targetfight/hitelf.png")
+var is_crying = false
 
 func _ready() -> void:
-	rect_position = Vector2(rand_range(rect_size.x, screen_width-rect_size.x), rand_range(rect_size.y, screen_height-rect_size.y))
+	position = Vector2(rand_range(rect_size.x, screen_width-rect_size.x), rand_range(rect_size.y, screen_height-rect_size.y))
 	wander_target = Vector2(rand_range(rect_size.x, screen_width-rect_size.x), rand_range(rect_size.y, screen_height-rect_size.y))
 
 
 func _physics_process(delta: float) -> void:
-	rect_position += rect_position.direction_to(wander_target) * speed * delta
-	if rect_position.distance_to(wander_target) <= 5:
+	if is_crying:
+		return
+	move_and_slide(position.direction_to(wander_target) * speed * delta)
+	if position.distance_to(wander_target) <= 5:
 		wander_target = Vector2(rand_range(rect_size.x, screen_width-rect_size.x), rand_range(rect_size.y, screen_height-rect_size.y))
 
 
 func _on_Timer_timeout() -> void:
+	if is_crying:
+		return
 	emit_signal("point", false)
 	queue_free()
 
-
-func _on_TargetSprite_pressed() -> void:
-	emit_signal("point", true)
-	queue_free()
-
-
 func _on_fliptimer_timeout():
-	flip_h = !flip_h
+	if is_crying:
+		return
+	scale.x *= -1
+
+func decide_hit():
+	if is_crying:
+		return
+	if get_last_slide_collision():
+		emit_signal("point", true)
+		$Sprite.texture = crying
+		is_crying = true
+		$crytimer.start()
+
+
+func _on_crytimer_timeout():
+	queue_free()

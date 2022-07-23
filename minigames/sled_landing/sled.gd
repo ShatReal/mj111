@@ -14,6 +14,8 @@ func _integrate_forces(state):
 		state.apply_central_impulse(Vector2.UP * thrust)
 
 func _on_sled_body_entered(_body):
+	if(!$finished_timer.is_stopped()):
+		return
 	if linear_velocity.y < 50:
 		GameManager.earn_points(reward)
 		$Sprite.texture = landed
@@ -22,4 +24,7 @@ func _on_sled_body_entered(_body):
 	else:
 		GameManager.earn_points(-reward)
 		$Sprite.texture = crash
+	$finished_timer.start()
+
+func _on_finished_timer_timeout():
 	GameManager.finish_game()

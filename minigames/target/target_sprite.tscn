@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://images/MiniGameJam - Colors/Targetfight/elfrunright.png" type="Texture" id=1]
+[ext_resource path="res://images/MiniGameJam - Colors/Targetfight/elfrunleft.png" type="Texture" id=1]
 [ext_resource path="res://minigames/target/target_sprite.gd" type="Script" id=2]
 
-[node name="TargetSprite" type="TextureButton"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 1 )
+[node name="TargetSprite" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -18,6 +17,14 @@ autostart = true
 wait_time = 0.4
 autostart = true
 
-[connection signal="pressed" from="." to="." method="_on_TargetSprite_pressed"]
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -57.6356, -242.584, -105.513, -127.931, -91.6534, -73.7546, -160.949, -35.957, -125.671, 14.4399, -55.1157, -3.19904, -45.0364, 67.3566, -87.8737, 168.15, -150.87, 150.511, -81.5741, 207.208, -9.75854, 53.4974, 16.6998, 33.3387, 10.4001, 127.833, 85.9954, 83.7355, 99.8546, 111.454, 97.3347, 15.6998, 48.1978, 59.797, 51.9775, -13.2784, 88.5153, -120.372, 36.8585, -182.108, 28.0391, -262.743 )
+
+[node name="crytimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="fliptimer" to="." method="_on_fliptimer_timeout"]
+[connection signal="timeout" from="crytimer" to="." method="_on_crytimer_timeout"]
