@@ -31,15 +31,17 @@ layer = -1
 [node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+collapsed = true
+dragger_visibility = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/HSplitContainer"]
-margin_right = 954.0
+margin_right = 960.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
 color = Color( 1, 0, 0, 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer/HSplitContainer"]
-margin_left = 966.0
+margin_left = 960.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
@@ -64,9 +66,11 @@ custom_fonts/font = SubResource( 2 )
 text = "Blue"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 953.554, 412.858 )
+position = Vector2( 953.554, 539 )
 rotation = 1.5708
+scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
