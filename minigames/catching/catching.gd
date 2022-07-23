@@ -2,13 +2,14 @@ extends Node2D
 
 
 const FO_START_Y = -32
-const FO_START_X_RANGE = Vector2(32, 1280-32)
+const screen_width = 1920
+const FO_START_X_RANGE = Vector2(32, screen_width-32)
 
 export var FallingObject: PackedScene
 export var max_obj_dist := 600.0 # Increase this variable for more difficulty!
-export var max_obj_dist_debuff := 1280.0
+export var max_obj_dist_debuff := screen_width
 
-var previous_x := 1280.0/2.0
+var previous_x := screen_width/2.0
 var points := 0
 
 

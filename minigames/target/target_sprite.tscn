@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://images/MiniGameJam - Colors/Targetfight/elfrunright.png" type="Texture" id=1]
 [ext_resource path="res://minigames/target/target_sprite.gd" type="Script" id=2]
 
 [node name="TargetSprite" type="TextureButton"]
@@ -14,5 +14,10 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
+[node name="fliptimer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
 [connection signal="pressed" from="." to="." method="_on_TargetSprite_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="fliptimer" to="." method="_on_fliptimer_timeout"]

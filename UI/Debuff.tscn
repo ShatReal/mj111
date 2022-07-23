@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/Debuff.gd" type="Script" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/text boxes/choice.png" type="Texture" id=2]
@@ -8,8 +8,13 @@
 [ext_resource path="res://sound_effects/button.ogg" type="AudioStream" id=6]
 [ext_resource path="res://sound_effects/bad.ogg" type="AudioStream" id=7]
 
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 3 )
+
 [sub_resource type="Theme" id=2]
 RichTextLabel/colors/default_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -26,23 +31,22 @@ anchor_bottom = 1.0
 color = Color( 0.0392157, 0.0431373, 0.0392157, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
-margin_left = 245.433
-margin_top = 33.9795
-margin_right = 1245.43
-margin_bottom = 833.979
-rect_scale = Vector2( 0.833693, 0.833693 )
+margin_left = 470.457
+margin_top = 163.845
+margin_right = 1470.45
+margin_bottom = 963.844
 texture = ExtResource( 2 )
+expand = true
 
 [node name="VSplitContainer" type="VBoxContainer" parent="ColorRect"]
-margin_left = 548.643
-margin_top = 105.238
-margin_right = 950.643
-margin_bottom = 422.238
-rect_rotation = -2.13648
+margin_left = 839.214
+margin_top = 243.842
+margin_right = 1345.21
+margin_bottom = 614.842
 theme = SubResource( 2 )
 
 [node name="Title" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
-margin_right = 402.0
+margin_right = 506.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 custom_fonts/normal_font = SubResource( 1 )
@@ -53,30 +57,31 @@ scroll_active = false
 
 [node name="Rules" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
 margin_top = 104.0
-margin_right = 402.0
-margin_bottom = 196.0
+margin_right = 506.0
+margin_bottom = 213.0
 size_flags_vertical = 3
 text = "Rules go here"
 
 [node name="Debuff" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
-margin_top = 200.0
-margin_right = 402.0
-margin_bottom = 293.0
+margin_top = 217.0
+margin_right = 506.0
+margin_bottom = 327.0
 size_flags_vertical = 3
 text = "Debuff: "
 
 [node name="Question" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
-margin_top = 297.0
-margin_right = 402.0
-margin_bottom = 317.0
-rect_min_size = Vector2( 0, 20 )
+margin_top = 331.0
+margin_right = 506.0
+margin_bottom = 371.0
+rect_min_size = Vector2( 0, 40 )
 text = "Do you risk it with the debuff for more points?"
+scroll_active = false
 
 [node name="HSplitContainer" type="HBoxContainer" parent="ColorRect"]
-margin_left = 570.957
-margin_top = 480.315
-margin_right = 977.957
-margin_bottom = 556.315
+margin_left = 902.083
+margin_top = 679.59
+margin_right = 1309.08
+margin_bottom = 779.59
 rect_rotation = -2.44274
 size_flags_vertical = 3
 
@@ -88,7 +93,7 @@ texture_normal = ExtResource( 5 )
 
 [node name="NoDebuff" type="TextureButton" parent="ColorRect/HSplitContainer"]
 margin_left = 205.0
-margin_right = 407.0
+margin_right = 406.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )

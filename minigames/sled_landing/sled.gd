@@ -3,6 +3,9 @@ extends RigidBody2D
 export var thrust = 10
 var reward = 10
 
+onready var crash = load("res://images/MiniGameJam - Colors/Sled Fall/sledbreak.png")
+onready var landed = load("res://images/MiniGameJam - Colors/Sled Fall/sledland.png")
+
 func _ready():
 	pass # Replace with function body.
 
@@ -11,8 +14,12 @@ func _integrate_forces(state):
 		state.apply_central_impulse(Vector2.UP * thrust)
 
 func _on_sled_body_entered(_body):
-	if linear_velocity.y > .01:
+	if linear_velocity.y < 50:
 		GameManager.earn_points(reward)
+		$Sprite.texture = landed
+		$Sprite.rotation_degrees = -62.6
+		$Sprite.position += Vector2(-100, 0)
 	else:
 		GameManager.earn_points(-reward)
-	GameManager.load_new_game()
+		$Sprite.texture = crash
+	GameManager.finish_game()

@@ -13,23 +13,27 @@ font_data = ExtResource( 2 )
 [node name="CenterContainer" type="CanvasLayer"]
 script = ExtResource( 3 )
 
-[node name="clock" type="TextureProgress" parent="."]
-margin_left = 540.0
-margin_right = 740.0
+[node name="center" type="CenterContainer" parent="."]
+anchor_right = 1.0
 margin_bottom = 200.0
+mouse_filter = 2
+
+[node name="clock" type="TextureProgress" parent="center"]
+margin_left = 760.0
+margin_right = 1160.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 200, 200 )
 mouse_filter = 2
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 1 )
 fill_mode = 4
 tint_progress = Color( 0.337255, 0.192157, 0.192157, 1 )
-nine_patch_stretch = true
 
-[node name="Timer" type="Timer" parent="clock"]
+[node name="Timer" type="Timer" parent="center/clock"]
 wait_time = 0.5
 autostart = true
 
-[node name="time" type="RichTextLabel" parent="clock"]
+[node name="time" type="RichTextLabel" parent="center/clock"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -45,4 +49,4 @@ bbcode_text = "[center]10"
 text = "10"
 scroll_active = false
 
-[connection signal="timeout" from="clock/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="center/clock/Timer" to="." method="_on_Timer_timeout"]

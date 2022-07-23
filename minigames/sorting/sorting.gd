@@ -13,7 +13,7 @@ func _on_Timer_timeout() -> void:
 	var s := SortingItem.instance()
 	add_child(s)
 	items.append(s)
-	s.position.x = 1280/2
+	s.position.x = 1920/2
 	s.connect("point", self, "on_item_point")
 
 

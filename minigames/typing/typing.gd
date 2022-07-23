@@ -30,6 +30,8 @@ func next_word():
 	typed.visible_characters = 0
 
 func _unhandled_key_input(event):
+	if !event.pressed:
+		return
 	if OS.get_scancode_string(event.scancode) == current_word[current_letter]:
 		current_letter += 1
 		if current_letter == len(current_word):
@@ -37,3 +39,8 @@ func _unhandled_key_input(event):
 			next_word()
 		else:
 			typed.visible_characters = current_letter
+	else:
+		GameManager.earn_points(-1)
+		if !$miss/AnimationPlayer.is_playing():
+			$miss.set_position(RandUtils.from_array($ColorRect/misses.get_children())[0].position - Vector2(400,400))
+			$miss/AnimationPlayer.play("spin")

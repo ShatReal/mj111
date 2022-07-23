@@ -68,9 +68,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 11.3137 ),
+"transitions": PoolRealArray( 1, 7.46425 ),
 "update": 0,
-"values": [ Vector2( 303.618, 148.951 ), Vector2( 289.348, 120.41 ) ]
+"values": [ Vector2( 439.536, 216.91 ), Vector2( 437.648, 173.492 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rect_scale")
@@ -80,37 +80,13 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 11.3137 ),
+"transitions": PoolRealArray( 1, 7.46425 ),
 "update": 0,
-"values": [ Vector2( 0.356126, 0.356126 ), Vector2( 0.395924, 0.395924 ) ]
+"values": [ Vector2( 0.554288, 0.554288 ), Vector2( 0.598472, 0.598472 ) ]
 }
 
 [sub_resource type="Animation" id=9]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.356126, 0.356126 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 319.333, 342.014 ) ]
-}
 
 [sub_resource type="Animation" id=10]
 resource_name = "hover"
@@ -123,9 +99,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 13.9288 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.356126, 0.356126 ), Vector2( 0.397, 0.397 ) ]
+"values": [ Vector2( 0.554, 0.554 ), Vector2( 0.621585, 0.621585 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rect_position")
@@ -135,9 +111,9 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 13.9288 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 319.333, 342.014 ), Vector2( 301.373, 324.055 ) ]
+"values": [ Vector2( 457.78, 505.689 ), Vector2( 439.28, 475.416 ) ]
 }
 
 [node name="Menu" type="Control"]
@@ -164,10 +140,10 @@ margin_right = 780.0
 margin_bottom = 670.0
 
 [node name="Title" type="RichTextLabel" parent="Background"]
-margin_left = 721.014
-margin_top = 17.1098
-margin_right = 1451.01
-margin_bottom = 117.11
+margin_left = 1060.81
+margin_top = 22.773
+margin_right = 1790.8
+margin_bottom = 122.773
 rect_min_size = Vector2( 0, 100 )
 rect_rotation = 48.3523
 custom_fonts/normal_font = SubResource( 1 )
@@ -190,11 +166,11 @@ anims/RESET = SubResource( 7 )
 anims/hover = SubResource( 8 )
 
 [node name="About" type="TextureButton" parent="Background"]
-margin_left = 319.333
-margin_top = 342.014
-margin_right = 1789.33
-margin_bottom = 942.014
-rect_scale = Vector2( 0.356126, 0.356126 )
+margin_left = 457.78
+margin_top = 505.689
+margin_right = 1927.78
+margin_bottom = 1105.69
+rect_scale = Vector2( 0.554, 0.554 )
 focus_neighbour_top = NodePath("../Play")
 theme = SubResource( 4 )
 texture_normal = ExtResource( 2 )

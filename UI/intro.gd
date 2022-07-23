@@ -6,6 +6,7 @@ func _ready():
 func _on_Dialog_dialogic_signal(value):
 	match value:
 		'cue_music': MusicManager.play('dice')
+		'start_game': GameManager.load_new_game()
 		'laugh': pass
 		'gasp': pass
 

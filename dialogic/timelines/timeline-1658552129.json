@@ -22,6 +22,10 @@
 			"z_index": 0
 		},
 		{
+			"emit_signal": "start_game",
+			"event_id": "dialogic_040"
+		},
+		{
 			"event_id": "dialogic_023",
 			"hide_dialogbox": true,
 			"wait_seconds": 2,
@@ -142,10 +146,6 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "...I'm ready."
-		},
-		{
-			"emit_signal": "start_game",
-			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {

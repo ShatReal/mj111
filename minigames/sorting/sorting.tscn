@@ -6,6 +6,10 @@
 [ext_resource path="res://minigames/sorting/belt2.png" type="Texture" id=4]
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=5]
 
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 5 )
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
@@ -14,35 +18,32 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="DynamicFont" id=2]
-size = 100
-font_data = ExtResource( 5 )
-
 [node name="Sorting" type="Node2D"]
 script = ExtResource( 1 )
 SortingItem = ExtResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 640.0
-margin_bottom = 720.0
-color = Color( 1, 0, 0, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 640.0
-margin_right = 1280.0
-margin_bottom = 720.0
-color = Color( 0, 0, 1, 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 640, 360 )
-rotation = 1.5708
-frames = SubResource( 1 )
-playing = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HSplitContainer"]
+margin_right = 954.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/HSplitContainer"]
+margin_left = 966.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+color = Color( 0, 0, 1, 1 )
 
 [node name="Red" type="Label" parent="CanvasLayer"]
 margin_left = 263.706
@@ -52,7 +53,7 @@ margin_bottom = 193.653
 custom_fonts/font = SubResource( 2 )
 text = "Red "
 
-[node name="Green" type="Label" parent="CanvasLayer"]
+[node name="Blue" type="Label" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -465.943
@@ -61,5 +62,11 @@ margin_right = -220.943
 margin_bottom = 195.435
 custom_fonts/font = SubResource( 2 )
 text = "Blue"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 953.554, 412.858 )
+rotation = 1.5708
+frames = SubResource( 1 )
+playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

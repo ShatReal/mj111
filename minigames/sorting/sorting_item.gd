@@ -6,29 +6,18 @@ signal point(this, add)
 enum Type{RED, BLUE}
 
 var type: int
-var speed := 400.0
+var speed := 800.0
 var dir := Vector2.DOWN
 
 
 func _ready() -> void:
 	type = randi() % Type.size()
 	if type == Type.RED:
-		var num := randi() % 3
-		if num == 0:
-			texture = load("res://minigames/sorting/redgift1.png")
-		elif num == 1:
-			texture = load("res://minigames/sorting/redgift2.png")
-		else:
-			texture = load("res://minigames/sorting/redgift3.png")
+		var num := randi() % 3  + 1
+		texture = load("res://minigames/sorting/redgift%d.png" % num)
 	else:
-		var num := randi() % 3
-		if num == 0:
-			texture = load("res://minigames/sorting/bluegift1.png")
-		elif num == 1:
-			texture = load("res://minigames/sorting/bluegift2.png")
-		else:
-			texture = load("res://minigames/sorting/bluegift3.png")
-
+		var num := randi() % 3 + 1
+		texture = load("res://minigames/sorting/bluegift%d.png" % num)
 
 func _physics_process(delta: float) -> void:
 	position += speed * dir * delta
