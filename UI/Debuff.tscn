@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/Debuff.gd" type="Script" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/text boxes/choice.png" type="Texture" id=2]
-[ext_resource path="res://fonts/L_10646.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/Strawberry Chocolate.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://images/MiniGameJam - Colors/buttons/no.png" type="Texture" id=4]
 [ext_resource path="res://images/MiniGameJam - Colors/buttons/yes.png" type="Texture" id=5]
 [ext_resource path="res://sound_effects/button.ogg" type="AudioStream" id=6]
@@ -17,7 +17,7 @@ RichTextLabel/colors/default_color = Color( 0.00392157, 0.00392157, 0.00392157, 
 RichTextLabel/fonts/normal_font = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 32
+size = 38
 font_data = ExtResource( 3 )
 
 [node name="Debuff" type="Control"]
@@ -46,7 +46,7 @@ margin_bottom = 614.842
 theme = SubResource( 2 )
 
 [node name="Title" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
-margin_right = 506.0
+margin_right = 505.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 custom_fonts/normal_font = SubResource( 1 )
@@ -57,21 +57,21 @@ scroll_active = false
 
 [node name="Rules" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
 margin_top = 104.0
-margin_right = 506.0
+margin_right = 505.0
 margin_bottom = 213.0
 size_flags_vertical = 3
 text = "Rules go here"
 
 [node name="Debuff" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
 margin_top = 217.0
-margin_right = 506.0
+margin_right = 505.0
 margin_bottom = 327.0
 size_flags_vertical = 3
 text = "Debuff: "
 
 [node name="Question" type="RichTextLabel" parent="ColorRect/VSplitContainer"]
 margin_top = 331.0
-margin_right = 506.0
+margin_right = 505.0
 margin_bottom = 371.0
 rect_min_size = Vector2( 0, 40 )
 text = "Do you risk it with the debuff for more points?"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Strawberry Chocolate.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/about.gd" type="Script" id=2]
 [ext_resource path="res://images/MiniGameJam - Colors/color backgrounds/bgpurple.png" type="Texture" id=3]
 [ext_resource path="res://images/MiniGameJam - Colors/buttons/back.png" type="Texture" id=4]
@@ -42,10 +42,11 @@ Art - UR4NIUMGL4SS and Jaya
 Music and sound - konblaser and fusoxide"
 
 [node name="Back" type="TextureButton" parent="."]
-margin_left = 753.638
-margin_top = 656.229
-margin_right = 1253.64
-margin_bottom = 931.229
+margin_left = 847.638
+margin_top = 740.229
+margin_right = 1097.64
+margin_bottom = 877.229
 texture_normal = ExtResource( 4 )
+expand = true
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
