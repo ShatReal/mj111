@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/L_10646.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://minigames/typing/typing.gd" type="Script" id=2]
 [ext_resource path="res://clock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+font_data = ExtResource( 4 )
 
 [node name="typing" type="Control"]
 anchor_right = 1.0
@@ -60,5 +66,24 @@ anchor_right = 1.0
 rect_min_size = Vector2( 0, 200 )
 
 [node name="clock" parent="CenterContainer" instance=ExtResource( 3 )]
+
+[node name="PointCounter" type="ColorRect" parent="."]
+margin_left = 47.0
+margin_top = 30.0
+margin_right = 217.0
+margin_bottom = 94.0
+color = Color( 0.65098, 0.270588, 0.270588, 1 )
+
+[node name="Points" type="RichTextLabel" parent="PointCounter"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 7.0
+margin_bottom = -7.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]10"
+text = "10"
+scroll_active = false
 
 [connection signal="timeout" from="CenterContainer/clock" to="." method="_on_clock_timeout"]
