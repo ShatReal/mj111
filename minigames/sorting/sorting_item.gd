@@ -24,8 +24,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-	if dir == Vector2.LEFT and type == Type.RED or dir == Vector2.RIGHT and type == Type.BLUE:
-		emit_signal("point", self, true)
-	else:
-		emit_signal("point", self, false)
+	if dir == Vector2.ZERO:
+		GameManager.earn_points(-1)
 	queue_free()
