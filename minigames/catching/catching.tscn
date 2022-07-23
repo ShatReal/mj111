@@ -53,7 +53,7 @@ position = Vector2( 640, 730 )
 shape = SubResource( 3 )
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
