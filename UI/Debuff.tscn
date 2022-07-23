@@ -9,7 +9,7 @@
 [ext_resource path="res://sound_effects/bad.ogg" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=3]
-size = 20
+size = 25
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=2]

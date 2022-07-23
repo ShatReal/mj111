@@ -29,6 +29,8 @@ func _ready():
 
 func finish_game():
 	SceneManager.change_scene('res://UI/podium.tscn', {'pattern_enter': 'scribbles', 'pattern_leave': 'circle'})
+	yield(SceneManager, "fade_complete")
+	MusicManager.play('')
 
 func earn_points(amount):
 	add_points += amount
