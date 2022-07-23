@@ -3,9 +3,10 @@
 [ext_resource path="res://minigames/configs/minigame.gd" type="Script" id=1]
 [ext_resource path="res://minigames/whackamole/whackamole.tscn" type="PackedScene" id=2]
 
-
 [resource]
 script = ExtResource( 1 )
 title = "Whack A Mole"
 debuff = "Speed up the moles"
+rules = "Whack the angels! Don't hit the Krampus!"
 scene = ExtResource( 2 )
+song = "mole"

@@ -46,3 +46,5 @@ volume_db = -11.818
 
 [node name="victory" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[node name="mole" type="AudioStreamPlayer" parent="."]

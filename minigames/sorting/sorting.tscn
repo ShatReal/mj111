@@ -37,6 +37,7 @@ color = Color( 0, 0, 1, 1 )
 position = Vector2( 640, 360 )
 rotation = 1.5708
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

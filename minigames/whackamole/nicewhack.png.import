@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/badwhack.png-f6725b5109329451283790e1996052a8.stex"
+path="res://.import/nicewhack.png-61a0dbdfafcb3a8e73643783a46eded4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/MiniGameJam - Colors/WhackAnAngel/badwhack.png"
-dest_files=[ "res://.import/badwhack.png-f6725b5109329451283790e1996052a8.stex" ]
+source_file="res://minigames/whackamole/nicewhack.png"
+dest_files=[ "res://.import/nicewhack.png-61a0dbdfafcb3a8e73643783a46eded4.stex" ]
 
 [params]
 

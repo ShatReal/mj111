@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/table.png-ccc357dd1623df8962622383efa61deb.stex"
+path="res://.import/angelpuppet.png-169e9e54baf63582bd9c91f02567f4cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/MiniGameJam - Colors/WhackAnAngel/table.png"
-dest_files=[ "res://.import/table.png-ccc357dd1623df8962622383efa61deb.stex" ]
+source_file="res://minigames/whackamole/angelpuppet.png"
+dest_files=[ "res://.import/angelpuppet.png-169e9e54baf63582bd9c91f02567f4cb.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nicewhack.png-7e078926d1182263116098106ddd303e.stex"
+path="res://.import/krampuspuppet.png-92b28f62de88f55f1110dc5daa615cf1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/MiniGameJam - Colors/WhackAnAngel/nicewhack.png"
-dest_files=[ "res://.import/nicewhack.png-7e078926d1182263116098106ddd303e.stex" ]
+source_file="res://minigames/whackamole/krampuspuppet.png"
+dest_files=[ "res://.import/krampuspuppet.png-92b28f62de88f55f1110dc5daa615cf1.stex" ]
 
 [params]
 
