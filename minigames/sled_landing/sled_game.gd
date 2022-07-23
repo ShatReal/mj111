@@ -6,3 +6,4 @@ func _ready():
 
 func debuff():
 	$sled.gravity_scale += 1
+	$sled.reward = 20

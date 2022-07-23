@@ -66,8 +66,8 @@ func load_game(debuffed):
 	get_tree().current_scene.add_child(point_counter_scene.instance())
 
 func restart():
-	SceneManager.change_scene("res://UI/Menu.tscn")
 	current_points = 0
 	current_game_index = -1
 	randomize()
 	game_configs.shuffle()
+	load_new_game()
