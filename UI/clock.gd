@@ -14,5 +14,10 @@ func _on_Timer_timeout():
 	clock.get_node('time').bbcode_text = '[center]%s[/center]' % (time - clock.value)
 	if clock.value == time:
 		clock.get_node('Timer').stop()
-		emit_signal("timeout")
+		$ring.play()
+		$ringtimer.start()
+		$wiggle.play("wiggle")
 
+
+func _on_ringtimer_timeout():
+	emit_signal("timeout")

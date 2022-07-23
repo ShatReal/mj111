@@ -1,14 +1,46 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/MiniGameJam - Colors/misc sprites/watch.bmp" type="Texture" id=1]
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/clock.gd" type="Script" id=3]
+[ext_resource path="res://UI/ring.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("center/clock:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "wiggle"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("center/clock:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, -15.0, 10.0, -10.0, 10.0, -10.0, 15.0 ]
+}
 
 [node name="CenterContainer" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -19,10 +51,14 @@ margin_bottom = 200.0
 mouse_filter = 2
 
 [node name="clock" type="TextureProgress" parent="center"]
+anchor_left = -0.00104167
+anchor_right = -0.00104167
 margin_left = 760.0
 margin_right = 1160.0
 margin_bottom = 400.0
 rect_min_size = Vector2( 200, 200 )
+rect_rotation = 10.0
+rect_pivot_offset = Vector2( 200, 200 )
 mouse_filter = 2
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 1 )
@@ -49,4 +85,16 @@ bbcode_text = "[center]10"
 text = "10"
 scroll_active = false
 
+[node name="ring" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -6.999
+
+[node name="ringtimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="wiggle" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/wiggle = SubResource( 3 )
+
 [connection signal="timeout" from="center/clock/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ringtimer" to="." method="_on_ringtimer_timeout"]
