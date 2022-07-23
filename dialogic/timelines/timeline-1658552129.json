@@ -1,0 +1,156 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"animation_wait": false,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552551.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2,
+			"waiting_skippable": true
+		},
+		{
+			"emit_signal": "cue_music",
+			"event_id": "dialogic_040"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This better be worth it. I had to use one of my precious days off to get on this show."
+		},
+		{
+			"character": "character-1658552149.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome to the Elf Games! Where honorable creatures with pointy ears can compete for huge prizes. And here is your host, Wanda K!"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello, hello and great pain, everyone! We have a great show lined up for you tonight. It's not just because the sack is empty, am I right?\nRight now we have our first contestant. What's your name, young man?"
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "My name is Jingle."
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Jingle! It's a pleasure to have you on the show tonight. Our pleasure obviously, not yours.\nNow do you know the rules of the game?"
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Um"
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's pretty simple! Simply choose your challenge, and complete it to the best of your ability. If you win, you get to return to your workshop with all the unlimited time off and sick days that you need, even during the Christmas rush! And we triple your bank accounts!"
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But fail too many times, and I have a new employee for my hellish lair. And there are LOTS of naughty children that need punishment this year!"
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That's not fair! I was only in this for the unlimited paid time off! "
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I don't make the rules. I just submit them to our sponsors and let them decide what's best for the cameras"
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Jingle, are you ready to jingle all the way? Will you pick your first challenge? "
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "...I'm ready."
+		},
+		{
+			"emit_signal": "start_game",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.3",
+		"file": "timeline-1658552129.json",
+		"name": "intro"
+	}
+}
