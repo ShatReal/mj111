@@ -13,13 +13,15 @@ func _on_Timer_timeout() -> void:
 
 func _on_Timer2_timeout() -> void:
 	$Timer.stop()
+	var points = 0
 	if GameManager.debuff:
 		points = randi() % 25 - 5
 	else:
 		points = randi() % 10 + 1
 	$VBoxContainer/Num.text = str(points)
+	GameManager.earn_points(points)
 	$Timer3.start()
 
 
 func _on_Timer3_timeout() -> void:
-	GameManager.finish_game(points)
+	GameManager.finish_game()

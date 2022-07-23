@@ -12,8 +12,8 @@ func _ready():
 
 func _on_Debuff_button_up():
 	$DebuffNoise.play()
-	GameManager.load_with_debuff()
+	GameManager.load_game(true)
 
 func _on_NoDebuff_button_up():
 	$NoDebuffNoise.play()
-	GameManager.load_normal()
+	GameManager.load_game(false)

@@ -8,6 +8,9 @@ var current_points := 0
 var add_points := 0
 var debuff := false
 
+onready var point_counter_scene = load('res://UI/PointCounter.tscn')
+onready var clock_scene = load('res://UI/clock.tscn')
+
 func _ready():
 	randomize()
 	var directory = Directory.new()
@@ -24,10 +27,13 @@ func _ready():
 	randomize()
 	game_configs.shuffle()
 
-func finish_game(points):
-	add_points = points
+func finish_game():
 	SceneManager.change_scene('res://UI/podium.tscn', {'pattern_enter': 'scribbles', 'pattern_leave': 'circle'})
-	
+
+func earn_points(amount):
+	add_points += amount
+	get_tree().current_scene.get_node('PointCounter/Points').bbcode_text = "[center]%s[/center]" % add_points
+
 func load_new_game():
 	current_game_index += 1
 	if current_game_index == 5:
@@ -38,18 +44,26 @@ func load_new_game():
 	
 	current_config = load("res://minigames/configs/%s" % selected_conf)
 	SceneManager.change_scene("res://UI/Debuff.tscn", {'pattern_enter': 'curtains', 'pattern_leave': 'circle'})
+	
 
-func load_with_debuff():
-	debuff = true
+func load_game(debuffed):
+	debuff = debuffed
+	
 	SceneManager.change_scene(current_config.scene)
+
 	yield(SceneManager, "scene_loaded")
-	get_tree().current_scene.debuff()
+	
+	if debuffed:
+		get_tree().current_scene.debuff()
+	
+	if current_config.timer > 0:
+		var clock = clock_scene.instance()
+		clock.time = current_config.timer
+		get_tree().current_scene.add_child(clock)
+		clock.connect("timeout", self, "finish_game")
+		
 	MusicManager.play(current_config.song)
-
-func load_normal():
-	debuff = false
-	SceneManager.change_scene(current_config.scene)
-	MusicManager.play(current_config.song)
+	get_tree().current_scene.add_child(point_counter_scene.instance())
 
 func restart():
 	SceneManager.change_scene("res://UI/Menu.tscn")

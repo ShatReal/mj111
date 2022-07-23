@@ -1,7 +1,7 @@
 extends TextureButton
 
 
-signal point(add)
+signal point(angel, whacked)
 
 var is_angel := true
 
@@ -21,12 +21,12 @@ func pop() -> void:
 
 
 func _on_Tween_tween_all_completed() -> void:
-	emit_signal("point", false)
+	emit_signal("point", is_angel, 'complete')
 	queue_free()
 
 
 func _on_Mole_pressed() -> void:
-	emit_signal("point", is_angel)
+	emit_signal("point", is_angel, 'whacked')
 	$Tween.stop_all()
 	if is_angel:
 		texture_normal = load("res://minigames/whackamole/nicewhack.png")

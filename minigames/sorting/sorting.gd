@@ -4,8 +4,6 @@ extends Node2D
 export var SortingItem: PackedScene
 
 var items := []
-var points := 0
-
 
 func debuff() -> void:
 	$Timer.wait_time = 0.5
@@ -33,18 +31,15 @@ func _input(event: InputEvent) -> void:
 func on_item_point(item: Sprite, add: bool) -> void:
 	if not items.size() == 0 and items[0] == item:
 		items.pop_front()
+	var points = 0
 	if add:
 		if GameManager.debuff:
-			points += 2
+			points = 2
 		else:
-			points += 1
+			points = 1
 	else:
 		if GameManager.debuff:
-			points -= 2
+			points = 2
 		else:
-			points -= 1
-	$CanvasLayer/Points.text = str(points)
-
-
-func _on_Timer2_timeout() -> void:
-	GameManager.finish_game(points)
+			points = 1
+	GameManager.earn_points(points)

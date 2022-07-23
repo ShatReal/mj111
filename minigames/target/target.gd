@@ -22,16 +22,11 @@ func _on_Timer_timeout() -> void:
 func on_point(add: bool) -> void:
 	if add:
 		if GameManager.debuff:
-			points += 2
+			GameManager.earn_points(2)
 		else:
-			points += 1
+			GameManager.earn_points(1)
 	else:
 		if GameManager.debuff:
-			points -= 2
+			GameManager.earn_points(-2)
 		else:
-			points -= 1
-	$Points.text = str(points)
-
-
-func _on_Timer2_timeout() -> void:
-	GameManager.finish_game(points)
+			GameManager.earn_points(-1)

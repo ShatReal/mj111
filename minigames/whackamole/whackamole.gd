@@ -17,18 +17,14 @@ func _on_MoleTimer_timeout() -> void:
 	m.pop()
 
 
-func on_point(add: bool) -> void:
-	if add:
+func on_point(is_angel: bool, state: String) -> void:
+	if (is_angel and state == 'whacked'):
 		if GameManager.debuff:
-			points += 2
+			GameManager.earn_points(2)
 		else:
-			points += 1
-	else:
+			GameManager.earn_points(1)
+	elif (!is_angel and state == 'whacked') or (is_angel and state == 'complete'):
 		if GameManager.debuff:
-			points -= 2
+			GameManager.earn_points(-2)
 		else:
-			points -= 1
-
-
-func _on_GameTimer_timeout() -> void:
-	GameManager.finish_game(points)
+			GameManager.earn_points(-1)

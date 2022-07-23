@@ -32,20 +32,14 @@ func _on_Timer_timeout() -> void:
 
 func _on_CatchingPlayer_caught() -> void:
 	if GameManager.debuff:
-		points += 2
+		GameManager.earn_points(2)
 	else:
-		points += 1
-	$CanvasLayer/Points.text = str(points)
+		GameManager.earn_points(1)
 
 
 func _on_Area2D_area_entered(area: Area2D) -> void:
 	area.queue_free()
 	if GameManager.debuff:
-		points -= 2
+		GameManager.earn_points(-2)
 	else:
-		points -= 1
-	$CanvasLayer/Points.text = str(points)
-
-
-func _on_Timer2_timeout() -> void:
-	GameManager.finish_game(points)
+		GameManager.earn_points(-1)

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://minigames/configs/minigame.gd" type="Script" id=1]
+[ext_resource path="res://UI/minigame.gd" type="Script" id=1]
 [ext_resource path="res://minigames/typing/typing.tscn" type="PackedScene" id=2]
 
 [resource]
@@ -10,3 +10,4 @@ debuff = "Longer words"
 rules = "Type the words as they show up, longer words get more points"
 scene = ExtResource( 2 )
 song = "typing"
+timer = 10
