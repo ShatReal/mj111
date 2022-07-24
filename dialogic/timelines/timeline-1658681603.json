@@ -1,0 +1,144 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "angry",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"emit_signal": "boo",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "Can't you do [b]ANY[/b] better?",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.6
+				}
+			}
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "mad",
+			"text": "What do you mean? I'm trying my absolute best here!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 0.9
+				}
+			}
+		},
+		{
+			"emit_signal": "boo",
+			"event_id": "dialogic_040"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "[wave amp=50 freq=5]\"I'm trying my absolute best\"[/wave]",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.5
+				}
+			}
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "angry",
+			"text": "Honestly it's like you're trying to lose\nI can't forcibly hire a lazy elf that isn't even motivated by unlimited time off!\nGet out before the ratings go negative!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.5
+				},
+				"1": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.5
+				},
+				"2": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.5
+				}
+			}
+		},
+		{
+			"emit_signal": "end_game",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.3",
+		"file": "timeline-1658681603.json",
+		"name": "good_ending"
+	}
+}

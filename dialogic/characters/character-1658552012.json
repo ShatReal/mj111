@@ -18,6 +18,10 @@
 		{
 			"name": "laugh",
 			"path": "res://images/MiniGameJam - Colors/misc sprites/wandalaughing.png"
+		},
+		{
+			"name": "angry",
+			"path": "res://images/MiniGameJam - Colors/misc sprites/suswanda.png"
 		}
 	],
 	"scale": 50,

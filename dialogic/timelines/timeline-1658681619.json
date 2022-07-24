@@ -1,0 +1,149 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "angry",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Look kid, I don't know how you're doing this but we you can't win",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 1.2
+				}
+			}
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "calm",
+			"text": "What do you mean?",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 0.3
+				}
+			}
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "We can't afford any of those thing you could win! Frankly, the game is rigged so you don't win\nWhich means you must be cheating!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 1
+				},
+				"1": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 1
+				}
+			}
+		},
+		{
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_001",
+			"portrait": "mad",
+			"text": "How could you say that? I played fair and square!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 0.9
+				}
+			}
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1658552006.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[i]Which is what a cheater would say[/i]\nWe're going to take another photo with you holding flowers and we'll edit the footage to make it seem you got more points so the TV audience doesn't riot, but after that you're [b]done[/b]",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 3.3
+				},
+				"1": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 3.3
+				}
+			}
+		},
+		{
+			"emit_signal": "end_game",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.3",
+		"file": "timeline-1658681619.json",
+		"name": "cheat_ending"
+	}
+}

@@ -72,7 +72,7 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello, hello and great pain, everyone! We have a great show lined up for you tonight. It's not just because the sack is empty",
+			"text": "Hello, hello and great pain, everyone! We have a great, [wave amp=50 freq=5]entertaining[/wave], show lined up for you tonight. It's not just because the sack is empty",
 			"voice_data": {
 				"0": {
 					"audio_bus": "Master",
@@ -313,6 +313,10 @@
 					"stop_time": 0.3
 				}
 			}
+		},
+		{
+			"emit_signal": "start_game",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {

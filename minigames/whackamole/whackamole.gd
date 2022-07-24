@@ -4,11 +4,12 @@ extends Node2D
 export var Mole: PackedScene
 
 var points := 0
-
+onready var hammer = load('res://minigames/whackamole/hammer.png')
+onready var bonk = load('res://minigames/whackamole/hammerbonk.png')
+onready var hammer_ent = $hammer
 
 func debuff():
 	pass
-
 
 func _on_MoleTimer_timeout() -> void:
 	var m := Mole.instance()
@@ -28,3 +29,10 @@ func on_point(is_angel: bool, state: String) -> void:
 			GameManager.earn_points(-2)
 		else:
 			GameManager.earn_points(-1)
+
+func _process(delta):
+	if Input.is_mouse_button_pressed(1):
+		hammer_ent.texture = hammer
+	else:
+		hammer_ent.texture = bonk
+	hammer_ent.position = get_viewport().get_mouse_position()

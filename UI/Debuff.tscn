@@ -32,11 +32,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.101563, 0.0324184, 0.00476074, 1 )
 
-[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
-margin_left = 1084.19
-margin_top = 6.34961
-margin_right = 2306.19
-margin_bottom = 953.35
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/CenterContainer"]
+margin_left = 349.0
+margin_top = 66.0
+margin_right = 1571.0
+margin_bottom = 1013.0
 texture = ExtResource( 9 )
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
