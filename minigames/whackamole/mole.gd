@@ -32,6 +32,7 @@ func _on_Mole_pressed() -> void:
 		texture_normal = load("res://minigames/whackamole/nicewhack.png")
 	else:
 		texture_normal = load("res://minigames/whackamole/badwhack.png")
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$Timer.start()
 
 

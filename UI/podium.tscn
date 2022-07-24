@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/misc sprites/playerelfstand.png" type="Texture" id=2]
 [ext_resource path="res://UI/podium.gd" type="Script" id=3]
+[ext_resource path="res://sound_effects/point.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -48,7 +49,7 @@ custom_colors/default_color = Color( 0.501961, 0, 0.223529, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]120"
-text = "-40"
+text = "120"
 scroll_active = false
 
 [node name="ScoreTimer" type="Timer" parent="."]
@@ -56,6 +57,10 @@ wait_time = 0.1
 
 [node name="EndTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="PointSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+pitch_scale = 0.4
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/krampus.png-2366c4ecac8c21a7543c550a7cb23375.stex"
+path="res://.import/gameshow_background.bmp-6d95c508b7ef7c4ffc652fce0fb533a5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/misc sprites/krampus.png"
-dest_files=[ "res://.import/krampus.png-2366c4ecac8c21a7543c550a7cb23375.stex" ]
+source_file="res://images/MiniGameJam - Colors/intro/gameshow_background.bmp"
+dest_files=[ "res://.import/gameshow_background.bmp-6d95c508b7ef7c4ffc652fce0fb533a5.stex" ]
 
 [params]
 

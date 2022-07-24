@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("New Anim")
-	if GameManager.current_points >= 50:
+	if GameManager.current_points >= 100:
 		MusicManager.play("victory")
 		$CenterContainer/MarginContainer/Lose.hide()
 		$CenterContainer/MarginContainer/Win.show()

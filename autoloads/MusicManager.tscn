@@ -21,7 +21,7 @@ volume_db = -19.991
 
 [node name="dice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -2.364
+volume_db = -8.482
 
 [node name="debuff" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

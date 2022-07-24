@@ -86,3 +86,7 @@ anims/throw = SubResource( 2 )
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 3.495
+pitch_scale = 1.5
+
+[connection signal="finished" from="HitSound" to="." method="_on_HitSound_finished"]

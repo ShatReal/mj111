@@ -22,8 +22,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position += speed * dir * delta
 
-
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-	if dir == Vector2.ZERO:
+	if dir == Vector2.DOWN:
 		GameManager.earn_points(-1)
+		get_parent().items.pop_front()
 	queue_free()

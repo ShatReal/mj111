@@ -33,7 +33,7 @@ func _input(event: InputEvent) -> void:
 	
 	$PackageNoises.play()
 	
-	var points = 0	
+	var points = 0
 	if dir == Vector2.LEFT and items[0].type == Type.RED or dir == Vector2.RIGHT and items[0].type == Type.BLUE:
 		if GameManager.debuff:
 			points = 2
