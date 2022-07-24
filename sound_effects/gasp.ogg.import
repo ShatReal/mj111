@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gasp.ogg-ca7aa75a3a62ac3809b14016862e5181.oggstr"
+
+[deps]
+
+source_file="res://sound_effects/gasp.ogg"
+dest_files=[ "res://.import/gasp.ogg-ca7aa75a3a62ac3809b14016862e5181.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

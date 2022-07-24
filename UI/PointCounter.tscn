@@ -165,7 +165,7 @@ custom_colors/default_color = Color( 0.933333, 0.933333, 0.933333, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]0"
-text = "0"
+text = "[center]0"
 scroll_active = false
 
 [node name="TextureRect" type="TextureRect" parent="PointCounter"]

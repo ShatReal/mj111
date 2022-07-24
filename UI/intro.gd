@@ -23,8 +23,8 @@ func _on_Dialog_dialogic_signal(value):
 		'start_game': GameManager.load_new_game()
 		'laughter': laugh()
 		'gasp': gasp()
-		'cheer': cheer()
-		'boo': boo()
+		'cheer': $crowd.cheer()
+		'boo': $crowd.boo()
 		'start_game': GameManager.load_new_game()
 		'end_game': SceneManager.change_scene("res://UI/endscreen.tscn")
 
@@ -34,10 +34,4 @@ func laugh():
 
 func gasp():
 	$CenterContainer/signs/AnimationPlayer.play("gasp")
-	$SignNoise.play()
-
-func boo():
-	pass
-
-func cheer():
-	pass
+	$crowd.gasp()

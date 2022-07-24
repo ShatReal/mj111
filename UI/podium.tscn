@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/misc sprites/playerelfstand.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sound_effects/point.ogg" type="AudioStream" id=4]
 [ext_resource path="res://images/MiniGameJam - Colors/intro/crowd.png" type="Texture" id=5]
 [ext_resource path="res://images/MiniGameJam - Colors/intro/gameshow_background.bmp" type="Texture" id=6]
+[ext_resource path="res://sound_effects/crowd.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -128,6 +129,8 @@ texture = ExtResource( 5 )
 playback_speed = 5.0
 anims/RESET = SubResource( 3 )
 anims/point = SubResource( 2 )
+
+[node name="crowd" parent="." instance=ExtResource( 7 )]
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]

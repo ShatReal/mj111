@@ -112,7 +112,7 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "angry",
-			"text": "Honestly it's like you're trying to lose\nI can't forcibly hire a lazy elf that isn't even motivated by unlimited time off!\nGet out before the ratings go negative!",
+			"text": "Honestly it's like you're trying to lose\nI can't forcibly hire a lazy elf that isn't even motivated by unlimited time off!",
 			"voice_data": {
 				"0": {
 					"audio_bus": "Master",
@@ -127,6 +127,23 @@
 				"2": {
 					"audio_bus": "Master",
 					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.5
+				}
+			}
+		},
+		{
+			"emit_signal": "cheer",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1658552012.json",
+			"event_id": "dialogic_001",
+			"portrait": "laugh",
+			"text": "Get out before the ratings go negative!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "",
 					"stop_time": 0.5
 				}
 			}
