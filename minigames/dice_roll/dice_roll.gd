@@ -44,3 +44,12 @@ func _on_TextureButton_button_up():
 	$TextureButton.visible = false
 	die.apply_central_impulse(Vector3.UP * 5)
 	die.apply_torque_impulse(RandUtils.vec3() * 8)
+
+onready var dice_noise = load('res://sound_effects/dice.ogg')
+func _on_die_body_entered(body):
+	if !rolling:
+		return
+	var noise := AudioStreamPlayer.new()
+	noise.stream = dice_noise
+	add_child(noise)
+	noise.play()

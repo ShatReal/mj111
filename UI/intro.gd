@@ -12,9 +12,11 @@ func _on_Dialog_dialogic_signal(value):
 
 func laugh():
 	$CenterContainer/signs/AnimationPlayer.play("laugh")
+	$SignNoise.play()
 
 func gasp():
 	$CenterContainer/signs/AnimationPlayer.play("gasp")
+	$SignNoise.play()
 
 func cheer():
 	pass

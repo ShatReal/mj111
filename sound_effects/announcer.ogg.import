@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/announcer.ogg-0285f4df088598a527e54044a90036bc.oggstr"
+
+[deps]
+
+source_file="res://sound_effects/announcer.ogg"
+dest_files=[ "res://.import/announcer.ogg-0285f4df088598a527e54044a90036bc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

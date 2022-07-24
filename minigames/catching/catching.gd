@@ -29,9 +29,11 @@ func _on_Timer_timeout() -> void:
 		max(FO_START_X_RANGE[0], previous_x - max_obj_dist / 2),
 		min(FO_START_X_RANGE[1], previous_x + max_obj_dist / 2)
 	)
+	$Timer.wait_time = randf() + .5
 
 
 func _on_CatchingPlayer_caught() -> void:
+	$PackageNoises.play()
 	if GameManager.debuff:
 		GameManager.earn_points(2)
 	else:

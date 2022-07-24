@@ -19,9 +19,10 @@ func _on_Timer_timeout() -> void:
 	t.connect("point", self, "on_point")
 	$targets.add_child(t)
 
-func hit():
+func hit(pos):
 	for target in $targets.get_children():
-		target.decide_hit()
+		if target.position.distance_to(pos) < 50:
+			target.hit()
 
 func on_point(add: bool) -> void:
 	if add:

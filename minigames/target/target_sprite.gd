@@ -36,14 +36,11 @@ func _on_fliptimer_timeout():
 		return
 	scale.x *= -1
 
-func decide_hit():
-	if is_crying:
-		return
-	if get_last_slide_collision():
-		emit_signal("point", true)
-		$Sprite.texture = crying
-		is_crying = true
-		$crytimer.start()
+func hit():
+	emit_signal("point", true)
+	$Sprite.texture = crying
+	is_crying = true
+	$crytimer.start()
 
 
 func _on_crytimer_timeout():

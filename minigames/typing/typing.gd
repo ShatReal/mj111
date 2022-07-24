@@ -1,6 +1,6 @@
 extends Control
 
-var words = ["Christmas","Merry","Festive","Santa","Nicholas","Kringle","Elves","Jolly","Reindeer","Carols","Carolling","Carolers","Mistletoe","Frankincense","Myrrh","Nativity","Xmas","Yuletide","Tinsel","Stocking","Presents","Fruitcake","Chimney","Jesus","Birth","Family","Candy","Pinecone","Spirit","Tidings","Tradition","Rudolph","Sleigh","Holiday","Holly","Ornaments","Scrooge","Sledge","Snowball","Nick","Snowman","Christmas","Frost","helpers","workshop","carol","card","Frosty","bells","Gingerbread","Plum","Season","Celebrate","tree","Chestnuts","Angel","Elf","Feast","Goose"]
+var words = ["Christmas","Merry","Festive","Santa","Nicholas","Kringle","Elves","Jolly","Reindeer","Carols","Carolling","Carolers","Mistletoe","Frankincense","Myrrh","Nativity","Xmas","Yuletide","Tinsel","Stocking","Presents","Fruitcake","Chimney","Family","Candy","Pinecone","Spirit","Tidings","Tradition","Rudolph","Sleigh","Holiday","Holly","Ornaments","Scrooge","Sledge","Snowball","Nick","Snowman","Christmas","Frost","helpers","workshop","carol","card","Frosty","bells","Gingerbread","Plum","Season","Celebrate","tree","Chestnuts","Angel","Elf","Feast","Goose"]
 var MAX_WORD_LENGTH = 5
 var current_word = ""
 var current_letter = 0

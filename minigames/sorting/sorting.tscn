@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://minigames/sorting/sorting.gd" type="Script" id=1]
 [ext_resource path="res://minigames/sorting/sorting_item.tscn" type="PackedScene" id=2]
 [ext_resource path="res://minigames/sorting/belt1.png" type="Texture" id=3]
 [ext_resource path="res://minigames/sorting/belt2.png" type="Texture" id=4]
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://PackageNoises.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 100
@@ -71,5 +72,7 @@ rotation = 1.5708
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
 playing = true
+
+[node name="PackageNoises" parent="." instance=ExtResource( 6 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
