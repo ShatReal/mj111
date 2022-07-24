@@ -35,7 +35,7 @@ func _unhandled_key_input(event):
 	if OS.get_scancode_string(event.scancode) == current_word[current_letter]:
 		current_letter += 1
 		if current_letter == len(current_word):
-			GameManager.earn_points(len(current_word))
+			GameManager.earn_points(len(current_word)-2)
 			next_word()
 		else:
 			typed.visible_characters = current_letter

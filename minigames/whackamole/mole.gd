@@ -8,7 +8,7 @@ var is_angel := true
 
 func _ready() -> void:
 	rect_position = Vector2(-100, -100)
-	if randi() % 2:
+	if randi() % 10 < 3:
 		is_angel = false
 		texture_normal = load("res://minigames/whackamole/krampuspuppet.png")
 

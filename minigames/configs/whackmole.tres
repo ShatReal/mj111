@@ -10,4 +10,4 @@ debuff = "Speed up the moles"
 rules = "Whack the angels! Don't hit the Krampus!"
 scene = ExtResource( 2 )
 song = "mole"
-timer = 10
+timer = 15

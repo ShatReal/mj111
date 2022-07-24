@@ -7,7 +7,7 @@ var items := []
 enum Type{RED, BLUE}
 
 func debuff() -> void:
-	$Timer.wait_time = 0.5
+	$Timer.wait_time = 0.3
 
 
 func _on_Timer_timeout() -> void:

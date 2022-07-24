@@ -10,4 +10,4 @@ debuff = "Faster targets"
 rules = "Click the targets to shoot them!"
 scene = ExtResource( 2 )
 song = "target"
-timer = 10
+timer = 20

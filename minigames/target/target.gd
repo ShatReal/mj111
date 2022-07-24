@@ -21,7 +21,7 @@ func _on_Timer_timeout() -> void:
 
 func hit(pos):
 	for target in $targets.get_children():
-		if target.position.distance_to(pos) < 50:
+		if target.position.distance_to(pos) < 70:
 			target.hit()
 
 func on_point(add: bool) -> void:

@@ -29,6 +29,7 @@ func _on_sled_body_entered(_body):
 	else:
 		GameManager.earn_points(-reward)
 		$Sprite.texture = crash
+		$CrashSound.play()
 	$finished_timer.start()
 	onground = true
 

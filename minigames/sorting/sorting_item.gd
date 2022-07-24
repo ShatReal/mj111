@@ -6,7 +6,7 @@ signal point(this, add)
 enum Type{RED, BLUE}
 
 var type: int
-var speed := 800.0
+var speed := 1000.0
 var dir := Vector2.DOWN
 
 
