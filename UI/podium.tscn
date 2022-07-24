@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/misc sprites/playerelfstand.png" type="Texture" id=2]
 [ext_resource path="res://UI/podium.gd" type="Script" id=3]
 [ext_resource path="res://sound_effects/point.ogg" type="AudioStream" id=4]
+[ext_resource path="res://images/MiniGameJam - Colors/intro/crowd.png" type="Texture" id=5]
+[ext_resource path="res://images/MiniGameJam - Colors/intro/gameshow_background.bmp" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -17,11 +19,18 @@ script = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.113281, 0.0442505, 0.00973511, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/CenterContainer"]
+margin_left = 349.0
+margin_top = 66.0
+margin_right = 1571.0
+margin_bottom = 1013.0
+texture = ExtResource( 6 )
 
 [node name="Jingle" type="TextureRect" parent="ColorRect/CenterContainer"]
 margin_left = 720.0
@@ -61,6 +70,13 @@ one_shot = true
 [node name="PointSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 pitch_scale = 0.4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -500.0
+texture = ExtResource( 5 )
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="EndTimer" to="." method="_on_EndTimer_timeout"]

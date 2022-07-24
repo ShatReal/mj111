@@ -35,15 +35,9 @@ func _input(event: InputEvent) -> void:
 	
 	var points = 0
 	if dir == Vector2.LEFT and items[0].type == Type.RED or dir == Vector2.RIGHT and items[0].type == Type.BLUE:
-		if GameManager.debuff:
-			points = 2
-		else:
-			points = 1
+		points = 1
 	else:
-		if GameManager.debuff:
-			points = 2
-		else:
-			points = 1
+		points = -1
 	
 	GameManager.earn_points(points)
 	items[0].dir = dir
