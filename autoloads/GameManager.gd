@@ -34,9 +34,9 @@ func finish_game():
 
 func earn_points(amount):
 	add_points += amount
-	get_tree().current_scene.get_node('PointCounter/Points').bbcode_text = "[center]%s[/center]" % add_points
+	get_tree().current_scene.get_node('Border/PointCounter/VSplitContainer/Points').bbcode_text = "[center]%s[/center]" % add_points
 
-func load_new_game():
+func load_new_game():	
 	current_game_index += 1
 	if current_game_index == 5:
 		SceneManager.change_scene("res://UI/endscreen.tscn", {'pattern_enter': 'curtains'})
