@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 title = "Catching"
-debuff = "More chaotic falling"
-rules = "Race around to catch the objects falling from the sky!"
+debuff = "More chaotic falling pattern"
+rules = "Race around to catch the objects falling from the sky! Move with left and right"
 scene = ExtResource( 2 )
 song = "catch"
 timer = 15

@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 title = "Land the Sled"
 debuff = "Stronger gravity"
-rules = "Press space to slow your fall as you try to carefully land the sled without crashing"
+rules = "Slow your fall as you try to carefully land the sled without crashing! Use SPACE to slow down"
 scene = ExtResource( 2 )
 song = "sled"
 timer = 0

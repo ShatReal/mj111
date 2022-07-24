@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 title = "Target Shooting"
-debuff = "Faster targets"
-rules = "Click the targets to shoot them!"
+debuff = "Faster Yule lads"
+rules = "Throw snowballs at the evil Yule lads!"
 scene = ExtResource( 2 )
 song = "target"
 timer = 20

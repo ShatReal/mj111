@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 title = "Sorting"
-debuff = "Faster conveyer"
+debuff = "Everything speeds up"
 rules = "Press left or right to sort the gifts into the correct side!"
 scene = ExtResource( 2 )
 song = "title"

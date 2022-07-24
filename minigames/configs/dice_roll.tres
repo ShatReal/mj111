@@ -3,11 +3,11 @@
 [ext_resource path="res://UI/minigame.gd" type="Script" id=1]
 [ext_resource path="res://minigames/dice_roll/dice_roll.tscn" type="PackedScene" id=2]
 
-
 [resource]
 script = ExtResource( 1 )
 title = "Dice Roll"
-debuff = "You have a chance of getting more points, or losing them!"
-rules = "Gamble for points!"
+debuff = "50% odds for a 30 point payoff"
+rules = "Gamble for points! 66% odds for a 20 point payoff"
 scene = ExtResource( 2 )
 song = "dice"
+timer = 0

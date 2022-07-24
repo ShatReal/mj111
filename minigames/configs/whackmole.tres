@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 title = "Whack A Mole"
-debuff = "Speed up the moles"
+debuff = "Speed up the puppets"
 rules = "Whack the angels! Don't hit the Krampus!"
 scene = ExtResource( 2 )
 song = "mole"
