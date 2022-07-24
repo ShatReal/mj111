@@ -187,9 +187,11 @@ anims/wiggle = SubResource( 7 )
 
 [node name="DebuffNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = 6.0
 
 [node name="NoDebuffNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = 6.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_top = 1.0

@@ -45,3 +45,5 @@ mouse_filter = 2
 method_call_mode = 1
 anims/RESET = SubResource( 2 )
 anims/ShaderFade = ExtResource( 5 )
+
+[node name="fade_audio" type="Tween" parent="."]

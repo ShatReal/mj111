@@ -131,6 +131,7 @@ func _process(_delta: float) -> void:
 		_current_scene = _tree.current_scene
 		_set_singleton_entities()
 		emit_signal("scene_loaded")
+		AudioServer.set_bus_volume_db(0, 0)
 	if _tree.current_scene != _previous_scene:
 		_previous_scene = _tree.current_scene
 
@@ -198,8 +199,12 @@ func _plugin_fade_in(options: Dictionary):
 
 #region Public API
 
+func set_volume(vol):
+	AudioServer.set_bus_volume_db(0, vol)
 
 func change_scene(scene, setted_options: Dictionary = {}) -> void:
+	$fade_audio.interpolate_method(self, "set_volume", 0, -60, .5)
+	$fade_audio.start()
 	var options = _get_final_options(setted_options)
 	if not options["skip_fade_out"]:
 		yield(fade_out(setted_options), "completed")

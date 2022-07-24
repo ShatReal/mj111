@@ -38,7 +38,7 @@ func finish_game():
 	else:
 		bad_scenes_in_a_row = 0
 	SceneManager.change_scene('res://UI/podium.tscn', {'pattern_enter': 'scribbles', 'pattern_leave': 'circle'})
-	yield(SceneManager, "fade_complete")
+	yield(SceneManager, "scene_loaded")
 	MusicManager.play('')
 
 func earn_points(amount):
