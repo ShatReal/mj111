@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wanda2.ogg-78edc15295b7a223d20796f2c01e31ff.oggstr"
+
+[deps]
+
+source_file="res://sound_effects/wanda2.ogg"
+dest_files=[ "res://.import/wanda2.ogg-78edc15295b7a223d20796f2c01e31ff.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

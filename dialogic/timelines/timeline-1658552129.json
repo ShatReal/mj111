@@ -24,7 +24,14 @@
 			"character": "character-1658552006.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "This better be worth it. I had to use one of my precious days off to get on this show."
+			"text": "This better be worth it. I had to use one of my precious days off to get on this show.",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 1.6
+				}
+			}
 		},
 		{
 			"character": "character-1658552149.json",
@@ -56,7 +63,14 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello, hello and great pain, everyone! We have a great show lined up for you tonight. It's not just because the sack is empty"
+			"text": "Hello, hello and great pain, everyone! We have a great show lined up for you tonight. It's not just because the sack is empty",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 2.3
+				}
+			}
 		},
 		{
 			"emit_signal": "laughter",
@@ -66,25 +80,53 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "laugh",
-			"text": "[wave amp=50 freq=5]am I right?[/wave]"
+			"text": "[wave amp=50 freq=5]am I right?[/wave]",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.2
+				}
+			}
 		},
 		{
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Right now we have our first contestant. What's your name, young man?"
+			"text": "Right now we have our first contestant. What's your name, young man?",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 1.3
+				}
+			}
 		},
 		{
 			"character": "character-1658552006.json",
 			"event_id": "dialogic_001",
 			"portrait": "calm",
-			"text": "My name is Jingle."
+			"text": "My name is Jingle.",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 0.3
+				}
+			}
 		},
 		{
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Jingle! It's a pleasure to have you on the show tonight."
+			"text": "Jingle! It's a pleasure to have you on the show tonight.",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 1
+				}
+			}
 		},
 		{
 			"emit_signal": "laughter",
@@ -94,25 +136,53 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "laugh",
-			"text": "Our pleasure obviously, not yours."
+			"text": "Our pleasure obviously, not yours.",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.6
+				}
+			}
 		},
 		{
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Now do you know the rules of the game?"
+			"text": "Now do you know the rules of the game?",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.7
+				}
+			}
 		},
 		{
 			"character": "character-1658552006.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Um"
+			"text": "Um",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 0.1
+				}
+			}
 		},
 		{
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It's pretty simple! Simply choose your challenge, and complete it to the best of your ability. If you win, you get to return to your workshop with all the unlimited time off and sick days that you need, even during the Christmas rush! And we triple your bank accounts!"
+			"text": "It's pretty simple! Simply choose your challenge, and complete it to the best of your ability. If you win, you get to return to your workshop with all the unlimited time off and sick days that you need, even during the Christmas rush! And we triple your bank accounts!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 4.9
+				}
+			}
 		},
 		{
 			"emit_signal": "cheer",
@@ -122,7 +192,14 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "But fail too many times, and I have a new employee for my hellish lair. And there are [i]LOTS[/i] of naughty children that need punishment this year!"
+			"text": "But fail too many times, and I have a new employee for my hellish lair. And there are [i]LOTS[/i] of naughty children that need punishment this year!",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 2.7
+				}
+			}
 		},
 		{
 			"emit_signal": "gasp",
@@ -132,7 +209,14 @@
 			"character": "character-1658552006.json",
 			"event_id": "dialogic_001",
 			"portrait": "mad",
-			"text": "That's not fair! I was only in this for the unlimited paid time off! "
+			"text": "That's not fair! I was only in this for the unlimited paid time off! ",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 1.3
+				}
+			}
 		},
 		{
 			"animation": "[Default]",
@@ -159,7 +243,14 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "laugh",
-			"text": "[i]I[/i] don't make the rules. I just submit them to our [wave amp=50 freq=5]sponsors[/wave] and let them decide what's best for the cameras"
+			"text": "[b]I[/b] don't make the rules. I just submit them to our [wave amp=50 freq=5]sponsors[/wave] and let them decide what's best for the cameras",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 2.2
+				}
+			}
 		},
 		{
 			"emit_signal": "laughter",
@@ -169,13 +260,32 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Jingle, are you ready to jingle all the way?\nWill you pick your first challenge? "
+			"text": "Jingle, are you ready to jingle all the way?\nWill you pick your first challenge? ",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.8
+				},
+				"1": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/wanda2.ogg",
+					"stop_time": 0.8
+				}
+			}
 		},
 		{
 			"character": "character-1658552006.json",
 			"event_id": "dialogic_001",
 			"portrait": "mad",
-			"text": "...I'm ready."
+			"text": "...I'm ready.",
+			"voice_data": {
+				"0": {
+					"audio_bus": "Master",
+					"file": "res://sound_effects/jingle.ogg",
+					"stop_time": 0.3
+				}
+			}
 		}
 	],
 	"metadata": {

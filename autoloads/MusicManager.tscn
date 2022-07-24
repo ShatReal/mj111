@@ -22,7 +22,7 @@ volume_db = -13.0
 
 [node name="sorting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -13.0
+volume_db = -19.991
 
 [node name="dice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

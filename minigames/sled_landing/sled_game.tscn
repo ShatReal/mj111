@@ -52,12 +52,12 @@ polygon = PoolVector2Array( 4.90457, 182.793, 128.739, -69.3314, 118.94, -104.96
 wait_time = 0.5
 one_shot = true
 
-[node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite" type="Polygon2D" parent="."]
 position = Vector2( 936.988, 1182.28 )
 rotation = 0.0482204
 scale = Vector2( 30.7848, 6.49764 )
-texture = ExtResource( 1 )
+color = Color( 0.921569, 0.921569, 0.921569, 1 )
+polygon = PoolVector2Array( -33.0442, -33.4193, 52.1567, -30.6984, 35.1273, 29.3508, -37.7393, 13.0358 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
 
