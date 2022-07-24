@@ -19,3 +19,5 @@ data_*/
 
 # Don't include those pesky .DS_Store files on macOS
 .DS_Store
+images/MiniGameJam - Colors/misc sprites/thumbnail.png
+images/MiniGameJam - Colors/misc sprites/thumbnail.xcf
