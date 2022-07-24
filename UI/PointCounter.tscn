@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/PointCounter.gd" type="Script" id=2]
 [ext_resource path="res://fonts/COURBD.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://sound_effects/bad.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sound_effects/confirm.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -20,11 +22,107 @@ colors = PoolColorArray( 0, 0, 0, 0.509804, 1, 1, 1, 0, 0, 0, 0, 0.458824 )
 [sub_resource type="GradientTexture" id=5]
 gradient = SubResource( 4 )
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PointCounter/VSplitContainer/Points:custom_colors/default_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.933333, 0.933333, 0.933333, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "earn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "wiggle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.0, -5.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PointCounter/VSplitContainer/Points:custom_colors/default_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.980392, 0.972549, 1, 1 ), Color( 1, 0.301961, 0.301961, 1 ), Color( 1, 0.301961, 0.301961, 1 ), Color( 0.980392, 0.972549, 1, 1 ) ]
+}
+
 [node name="Border" type="ColorRect"]
-margin_left = 40.0
-margin_top = 18.0
-margin_right = 249.0
-margin_bottom = 124.0
+margin_left = 137.515
+margin_top = 78.6495
+margin_right = 346.515
+margin_bottom = 184.65
+rect_pivot_offset = Vector2( 104, 54 )
 color = Color( 0.00784314, 0.00784314, 0.0392157, 1 )
 script = ExtResource( 2 )
 
@@ -63,7 +161,7 @@ margin_top = 42.0
 margin_right = 199.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_colors/default_color = Color( 0.980392, 0.972549, 1, 1 )
+custom_colors/default_color = Color( 0.933333, 0.933333, 0.933333, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]0"
@@ -85,3 +183,18 @@ margin_bottom = 101.0
 rect_rotation = 89.9999
 texture = SubResource( 5 )
 expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 3.0
+anims/RESET = SubResource( 6 )
+anims/earn = SubResource( 7 )
+anims/wiggle = SubResource( 8 )
+
+[node name="bad_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+pitch_scale = 0.84
+
+[node name="good_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+pitch_scale = 0.93

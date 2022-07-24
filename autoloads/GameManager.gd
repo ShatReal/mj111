@@ -43,7 +43,7 @@ func finish_game():
 
 func earn_points(amount):
 	add_points += amount
-	get_tree().current_scene.get_node('Border/PointCounter/VSplitContainer/Points').bbcode_text = "[center]%s[/center]" % add_points
+	get_tree().current_scene.get_node('Border').add(amount)
 
 func load_new_game():
 	current_game_index += 1
@@ -89,6 +89,7 @@ func restart():
 	ending = null
 	current_points = 0
 	current_game_index = -1
+	bad_scenes_in_a_row = 0
 	randomize()
 	game_configs.shuffle()
 	load_new_game()
@@ -98,6 +99,7 @@ func to_menu():
 	intro_done = false
 	current_points = 0
 	current_game_index = -1
+	bad_scenes_in_a_row = 0
 	randomize()
 	game_configs.shuffle()
 	SceneManager.change_scene('res://UI/Menu.tscn')

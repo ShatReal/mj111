@@ -19,6 +19,7 @@ func _on_MoleTimer_timeout() -> void:
 
 
 func on_point(is_angel: bool, state: String) -> void:
+	$hit_sound.play()
 	if (is_angel and state == 'whacked'):
 		if GameManager.debuff:
 			GameManager.earn_points(2)

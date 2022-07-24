@@ -4,16 +4,16 @@
 [ext_resource path="res://minigames/typing/typing.gd" type="Script" id=2]
 [ext_resource path="res://images/MiniGameJam - Colors/Typewriter/jingletyping.png" type="Texture" id=3]
 [ext_resource path="res://images/MiniGameJam - Colors/Typewriter/textcard.png" type="Texture" id=4]
-[ext_resource path="res://images/MiniGameJam - Colors/Typewriter/miss.png" type="Texture" id=5]
+[ext_resource path="res://minigames/typing/miss.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../miss:rect_rotation")
+tracks/0/path = NodePath("TextureRect:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,71 +22,23 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../miss:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../../miss:rect_scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ) ]
+"values": [ Vector2( -42.7904, 225.053 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "spin"
+[sub_resource type="Animation" id=5]
+resource_name = "missed"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../miss:rect_rotation")
+tracks/0/path = NodePath("TextureRect:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 15.455 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -360.0, 0.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../miss:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 15.455 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../../miss:rect_scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1e-05, 1e-05 ) ]
+"values": [ Vector2( -65.9537, 219.708 ), Vector2( -42.7904, 225.053 ), Vector2( -81.749, 222.164 ), Vector2( -86.5649, 240.078 ), Vector2( -58.8265, 216.819 ), Vector2( -65.9537, 219.708 ) ]
 }
 
 [node name="typing" type="Control"]
@@ -115,9 +67,9 @@ margin_right = -123.593
 margin_bottom = -319.108
 
 [node name="word" type="RichTextLabel" parent="ColorRect/CenterContainer"]
-margin_top = 156.0
+margin_top = 155.0
 margin_right = 1024.0
-margin_bottom = 256.0
+margin_bottom = 255.0
 rect_min_size = Vector2( 1024, 100 )
 custom_colors/default_color = Color( 0.411765, 0.411765, 0.411765, 1 )
 custom_fonts/normal_font = SubResource( 1 )
@@ -127,9 +79,9 @@ text = "WORD"
 scroll_active = false
 
 [node name="typed" type="RichTextLabel" parent="ColorRect/CenterContainer"]
-margin_top = 156.0
+margin_top = 155.0
 margin_right = 1024.0
-margin_bottom = 256.0
+margin_bottom = 255.0
 rect_min_size = Vector2( 1024, 100 )
 custom_colors/default_color = Color( 0.0980392, 0.788235, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
@@ -143,36 +95,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="misses" type="Node" parent="ColorRect"]
-
-[node name="pos1" type="Node2D" parent="ColorRect/misses"]
-position = Vector2( 1084.77, 710.198 )
-
-[node name="pos2" type="Node2D" parent="ColorRect/misses"]
-position = Vector2( 1125.23, 407.54 )
-
-[node name="pos3" type="Node2D" parent="ColorRect/misses"]
-position = Vector2( 1577.72, 638.279 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -65.9537
-margin_top = 219.708
-margin_right = 934.046
-margin_bottom = 1019.71
+margin_left = -42.7904
+margin_top = 225.053
+margin_right = 957.21
+margin_bottom = 1025.06
 texture = ExtResource( 3 )
 
-[node name="miss" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 265.488
-margin_top = -183.525
-margin_right = 1065.49
-margin_bottom = 616.475
-rect_rotation = -360.0
-rect_scale = Vector2( 1e-05, 1e-05 )
-rect_pivot_offset = Vector2( 400, 400 )
-texture = ExtResource( 5 )
+[node name="MissShake" type="AnimationPlayer" parent="."]
+playback_speed = 3.0
+anims/RESET = SubResource( 4 )
+anims/missed = SubResource( 5 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="miss"]
-root_node = NodePath("../../ColorRect/misses")
-anims/RESET = SubResource( 3 )
-anims/spin = SubResource( 2 )
+[node name="misses" type="Node" parent="."]
+
+[node name="miss0" parent="misses" instance=ExtResource( 5 )]
+margin_left = 714.93
+margin_top = -1.54205
+margin_right = 1514.93
+margin_bottom = 798.458
+
+[node name="miss1" parent="misses" instance=ExtResource( 5 )]
+margin_left = 675.889
+margin_top = 302.386
+margin_right = 1475.89
+margin_bottom = 1102.39
+
+[node name="miss2" parent="misses" instance=ExtResource( 5 )]
+margin_left = 1168.59
+margin_top = 226.876
+margin_right = 1968.59
+margin_bottom = 1026.88
+
+[node name="miss_playing" type="Node" parent="."]

@@ -12,6 +12,7 @@ TargetSprite = ExtResource( 2 )
 layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

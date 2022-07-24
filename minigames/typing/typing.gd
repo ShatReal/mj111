@@ -8,11 +8,15 @@ var points = 0
 
 onready var word = $ColorRect/CenterContainer/word
 onready var typed = $ColorRect/CenterContainer/typed
+onready var miss_playing = $miss_playing
+onready var misses = $misses
 
 func debuff():
 	MAX_WORD_LENGTH = 100
 
 func _ready():
+	for miss in misses.get_children():
+		miss.connect("done", self, "move_miss")
 	next_word()
 
 func gen_word():
@@ -29,6 +33,10 @@ func next_word():
 	current_letter = 0
 	typed.visible_characters = 0
 
+func move_miss(miss):
+	miss.get_parent().remove_child(miss)
+	misses.add_child(miss)
+
 func _unhandled_key_input(event):
 	if !event.pressed:
 		return
@@ -41,6 +49,11 @@ func _unhandled_key_input(event):
 			typed.visible_characters = current_letter
 	else:
 		GameManager.earn_points(-1)
-		if !$miss/AnimationPlayer.is_playing():
-			$miss.set_position(RandUtils.from_array($ColorRect/misses.get_children())[0].position - Vector2(400,400))
-			$miss/AnimationPlayer.play("spin")
+		if misses.get_child_count() > 0:
+			var miss = misses.get_child(randi() % misses.get_child_count())
+			misses.remove_child(miss)
+			miss_playing.add_child(miss)
+			miss.spin()
+		else:
+			RandUtils.from_array(miss_playing.get_children())[0].spin()
+		$MissShake.play("missed")

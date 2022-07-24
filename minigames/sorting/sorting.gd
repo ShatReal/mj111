@@ -22,11 +22,14 @@ func _input(event: InputEvent) -> void:
 	if items.size() == 0:
 		return
 		
+	var item = items[0]
 	var dir = Vector2.ZERO
 	if event.is_action_pressed("move_left"):
 		dir = Vector2.LEFT
+		item.rot_speed = -.1
 	elif event.is_action_pressed("move_right"):
 		dir = Vector2.RIGHT
+		item.rot_speed = .1
 		
 	if dir == Vector2.ZERO:
 		return
@@ -34,11 +37,11 @@ func _input(event: InputEvent) -> void:
 	$PackageNoises.play()
 	
 	var points = 0
-	if dir == Vector2.LEFT and items[0].type == Type.RED or dir == Vector2.RIGHT and items[0].type == Type.BLUE:
+	if dir == Vector2.LEFT and item.type == Type.RED or dir == Vector2.RIGHT and item.type == Type.BLUE:
 		points = 1
 	else:
 		points = -1
 	
 	GameManager.earn_points(points)
-	items[0].dir = dir
+	item.dir = dir
 	items.pop_front()

@@ -12,7 +12,7 @@ func _ready():
 	$ScoreTimer.start()
 
 func _on_Timer_timeout():
-	$PointSound.play()
+	$AnimationPlayer.play("point")
 
 	if GameManager.add_points < 0:
 		if $PointSound.pitch_scale > .4:

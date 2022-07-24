@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/Debuff.gd" type="Script" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/text boxes/choice.png" type="Texture" id=2]
@@ -21,6 +21,68 @@ RichTextLabel/fonts/normal_font = SubResource( 3 )
 [sub_resource type="DynamicFont" id=1]
 size = 38
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "wiggle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, -10.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "wiggle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, -10.0, 0.0 ]
+}
 
 [node name="Debuff" type="Control"]
 anchor_right = 1.0
@@ -101,15 +163,27 @@ size_flags_vertical = 3
 [node name="Debuff" type="TextureButton" parent="ColorRect/HSplitContainer"]
 margin_right = 201.0
 margin_bottom = 100.0
+rect_pivot_offset = Vector2( 100, 50 )
 size_flags_horizontal = 3
 texture_normal = ExtResource( 5 )
+
+[node name="wiggle" type="AnimationPlayer" parent="ColorRect/HSplitContainer/Debuff"]
+playback_speed = 3.0
+anims/RESET = SubResource( 4 )
+anims/wiggle = SubResource( 5 )
 
 [node name="NoDebuff" type="TextureButton" parent="ColorRect/HSplitContainer"]
 margin_left = 205.0
 margin_right = 406.0
 margin_bottom = 100.0
+rect_pivot_offset = Vector2( 100, 50 )
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )
+
+[node name="wiggle" type="AnimationPlayer" parent="ColorRect/HSplitContainer/NoDebuff"]
+playback_speed = 3.0
+anims/RESET = SubResource( 6 )
+anims/wiggle = SubResource( 7 )
 
 [node name="DebuffNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -126,4 +200,6 @@ mouse_filter = 2
 texture = ExtResource( 8 )
 
 [connection signal="button_up" from="ColorRect/HSplitContainer/Debuff" to="." method="_on_Debuff_button_up"]
+[connection signal="mouse_entered" from="ColorRect/HSplitContainer/Debuff" to="." method="_on_Debuff_mouse_entered"]
 [connection signal="button_up" from="ColorRect/HSplitContainer/NoDebuff" to="." method="_on_NoDebuff_button_up"]
+[connection signal="mouse_entered" from="ColorRect/HSplitContainer/NoDebuff" to="." method="_on_NoDebuff_mouse_entered"]

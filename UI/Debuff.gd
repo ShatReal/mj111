@@ -17,3 +17,11 @@ func _on_Debuff_button_up():
 func _on_NoDebuff_button_up():
 	$NoDebuffNoise.play()
 	GameManager.load_game(false)
+
+
+func _on_Debuff_mouse_entered():
+	$ColorRect/HSplitContainer/Debuff/wiggle.play("wiggle")
+
+
+func _on_NoDebuff_mouse_entered():
+	$ColorRect/HSplitContainer/NoDebuff/wiggle.play("wiggle")

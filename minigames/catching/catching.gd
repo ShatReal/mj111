@@ -6,8 +6,8 @@ const screen_width = 1920
 const FO_START_X_RANGE = Vector2(32, screen_width-32)
 
 export var FallingObject: PackedScene
-export var max_obj_dist := 600.0 # Increase this variable for more difficulty!
-export var max_obj_dist_debuff := screen_width
+export var max_obj_dist := 600 # Increase this variable for more difficulty!
+export var max_obj_dist_debuff := min(900, screen_width)
 
 var previous_x := screen_width/2.0
 var points := 0

@@ -36,12 +36,14 @@ func _on_endtimer_timeout():
 
 
 func _on_TextureButton_button_up():
+	if !$TextureButton/AnimationPlayer.is_playing():
+		$buttonclick.play()
+	$TextureButton/AnimationPlayer.play("press")
 	if rolling:
 		return
 	rolling = true
 	$endtimer.start()
 	$Timer3.start()
-	$TextureButton.visible = false
 	die.apply_central_impulse(Vector3.UP * 5)
 	die.apply_torque_impulse(RandUtils.vec3() * 8)
 
