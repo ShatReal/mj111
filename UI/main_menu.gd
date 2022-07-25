@@ -8,6 +8,7 @@ func _on_Play_button_up():
 
 func _ready():
 	$Background/Play.grab_focus()
+	$Background/Wheel/AnimationPlayer.play("spin")
 	MusicManager.play("title")
 
 
