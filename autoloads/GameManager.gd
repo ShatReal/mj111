@@ -51,9 +51,9 @@ func load_new_game():
 	current_game_index += 1
 	if bad_scenes_in_a_row == 3:
 		ending = end_types.GOOD
-	if current_points >= 70:
+	elif current_points >= 70:
 		ending = end_types.CHEAT
-	if current_game_index == 5:
+	elif current_game_index == 5:
 		ending = end_types.BAD
 		
 	if !(ending in ending_done) and ending != null:

@@ -13,7 +13,10 @@ func debuff():
 
 func _on_MoleTimer_timeout() -> void:
 	var m := Mole.instance()
-	$Spots.get_child(randi() % $Spots.get_child_count()).add_child(m)
+	var hole = $Spots.get_child(randi() % $Spots.get_child_count())
+	while hole.get_child_count() > 0:
+		hole = $Spots.get_child(randi() % $Spots.get_child_count())
+	hole.add_child(m)
 	m.connect("point", self, "on_point")
 	m.pop()
 

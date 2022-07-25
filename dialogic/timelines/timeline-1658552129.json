@@ -184,7 +184,7 @@
 			"character": "character-1658552012.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It's pretty simple! Choose your challenge, and complete it to the best of your ability. If you only get [b]60[/b] points, you get to return to your workshop with all the unlimited time off and sick days that you need, [i]even during the Christmas rush[/i]!",
+			"text": "It's pretty simple! Choose your challenge, and complete it to the best of your ability. If you only get [b]80[/b] points, you get to return to your workshop with all the unlimited time off and sick days that you need, [i]even during the Christmas rush[/i]!",
 			"voice_data": {
 				"0": {
 					"audio_bus": "Master",
