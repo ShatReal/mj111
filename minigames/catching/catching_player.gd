@@ -3,13 +3,13 @@ extends KinematicBody2D
 
 signal caught
 
-export var speed := 600.0
+export var speed := 1000.0
 var current_speed = 0
 var current_dir = 1
 
 func _physics_process(_delta: float) -> void:
 	var input := Input.get_axis("move_left", "move_right")
-	current_speed = lerp(current_speed, input, .03)
+	current_speed = lerp(current_speed, input, .015)
 	$Sprite.rotation_degrees = current_speed * 20
 	move_and_slide(speed * Vector2(current_speed, 0))
 

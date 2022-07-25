@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/MiniGameJam - Colors/buttons/tryagain.png" type="Texture" id=1]
 [ext_resource path="res://images/MiniGameJam - Colors/Ending screens/gameover.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://sound_effects/confirm.ogg" type="AudioStream" id=5]
 [ext_resource path="res://images/MiniGameJam - Colors/color backgrounds/bggreen.png" type="Texture" id=6]
 [ext_resource path="res://images/MiniGameJam - Colors/Ending screens/caught.png" type="Texture" id=7]
+[ext_resource path="res://fonts/SHOWG.TTF" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 8 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "New Anim"
@@ -106,6 +111,17 @@ margin_right = 1000.0
 margin_bottom = 800.0
 rect_min_size = Vector2( 750, 600 )
 texture = ExtResource( 7 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/MarginContainer/Cheat"]
+margin_left = -266.0
+margin_top = 456.0
+margin_right = 234.0
+margin_bottom = 656.0
+rect_min_size = Vector2( 500, 200 )
+rect_rotation = -21.9408
+custom_colors/default_color = Color( 0, 0.113725, 0.27451, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "Dont give up!"
 
 [node name="Button" type="TextureButton" parent="."]
 modulate = Color( 1, 1, 1, 0 )

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://minigames/target/target.gd" type="Script" id=1]
 [ext_resource path="res://minigames/target/target_sprite.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/MiniGameJam - Colors/color backgrounds/bgblue.png" type="Texture" id=3]
+[ext_resource path="res://images/MiniGameJam - Colors/Targetfight/gf6cey9w.bmp" type="Texture" id=3]
 
 [node name="Target" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,11 +12,12 @@ TargetSprite = ExtResource( 2 )
 layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-modulate = Color( 0.8, 0.8, 0.8, 1 )
+modulate = Color( 0.984314, 0.984314, 0.984314, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 3 )
+expand = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

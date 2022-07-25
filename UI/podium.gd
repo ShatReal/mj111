@@ -16,7 +16,7 @@ func _ready():
 func _on_Timer_timeout():
 	$AnimationPlayer.play("point")
 
-	if GameManager.add_points < 0:
+	if GameManager.add_points < 0 and GameManager.current_points > -10:
 		if $PointSound.pitch_scale > .4:
 			$PointSound.pitch_scale -= .05
 		GameManager.current_points -= 1
@@ -27,7 +27,7 @@ func _on_Timer_timeout():
 		GameManager.current_points += 1
 		GameManager.add_points -= 1
 	set_points()
-	if GameManager.add_points == 0:
+	if GameManager.add_points == 0 || (GameManager.add_points < 0 and GameManager.current_points == -10):
 		$ScoreTimer.stop()
 		$EndTimer.start()
 

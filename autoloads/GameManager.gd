@@ -46,6 +46,7 @@ func earn_points(amount):
 	get_tree().current_scene.get_node('Border').add(amount)
 
 func load_new_game():
+	add_points = 0
 	current_game_index += 1
 	if bad_scenes_in_a_row == 3:
 		ending = end_types.GOOD

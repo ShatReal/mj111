@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource( 1 )
 title = "Dice Roll"
-debuff = "50% odds for a 30 point payoff"
-rules = "Gamble for points! 66% odds for a 20 point payoff"
+debuff = "50% odds for a 20 point payoff"
+rules = "Gamble for points! 66% odds for a 10 point payoff"
 scene = ExtResource( 2 )
 song = "dice"
 timer = 0

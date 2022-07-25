@@ -4,12 +4,12 @@ enum state {GOOD, BAD}
 onready var die = $ViewportContainer/Viewport/die
 onready var raycasts = $ViewportContainer/Viewport/die/raycasts
 var faces = [state.GOOD, state.GOOD, state.BAD, state.GOOD, state.BAD, state.GOOD]
-var award = 20
+var award = 10
 onready var debuff_mat = load("res://minigames/dice_roll/debuff_die.material")
 var rolling = false
 
 func debuff() -> void:
-	award = 30
+	award = 20
 	faces = [state.BAD, state.GOOD, state.GOOD, state.GOOD, state.BAD, state.BAD]
 	die.get_node("die/Cube").mesh.surface_set_material(0, debuff_mat)
 
