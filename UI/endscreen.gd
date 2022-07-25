@@ -3,6 +3,7 @@ extends Control
 enum end_types {GOOD, BAD, CHEAT}
 
 func _ready():
+	$endings.text = "ENDINGS: %d/3" % len(GameManager.ending_done)
 	if GameManager.ending != end_types.GOOD:
 		$AnimationPlayer.play("New Anim")
 	if GameManager.ending == end_types.BAD:

@@ -143,5 +143,14 @@ stream = ExtResource( 5 )
 [node name="backtomenu" type="Timer" parent="."]
 wait_time = 14.0
 
+[node name="endings" type="RichTextLabel" parent="."]
+margin_left = 40.4331
+margin_top = 38.0546
+margin_right = 540.433
+margin_bottom = 138.055
+custom_colors/default_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "Endings: 0/3"
+
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
 [connection signal="timeout" from="backtomenu" to="." method="_on_backtomenu_timeout"]

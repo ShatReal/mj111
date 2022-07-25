@@ -12,6 +12,7 @@ enum end_types {GOOD, BAD, CHEAT}
 var ending = null
 
 var bad_scenes_in_a_row = 0
+var ending_done = []
 
 onready var point_counter_scene = load('res://UI/PointCounter.tscn')
 onready var clock_scene = load('res://UI/clock.tscn')
@@ -54,6 +55,11 @@ func load_new_game():
 		ending = end_types.CHEAT
 	if current_game_index == 5:
 		ending = end_types.BAD
+		
+	if !(ending in ending_done) and ending != null:
+		ending_done.push_back(ending)
+		
+	if ending == end_types.BAD:
 		SceneManager.change_scene("res://UI/endscreen.tscn", {'pattern_enter': 'curtains'})
 		return
 	
