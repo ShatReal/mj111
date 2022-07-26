@@ -41,7 +41,7 @@ func _on_fliptimer_timeout():
 	scale.x *= -1
 
 func hit():
-	if disappearing:
+	if is_crying or disappearing:
 		return
 	emit_signal("point", true)
 	$Sprite.texture = crying
